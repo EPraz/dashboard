@@ -12,14 +12,14 @@ export default function RootLayout() {
   };
 
   return (
-    <SafeAreaView className="flex-1 relative bg-transparent">
+    <SafeAreaView className="flex-1 bg-gray-100">
       <Header title="Dashboard" handleSidebar={handleSidebar} />
       <MobileSidebar handleSidebar={handleSidebar} sidebarOpen={sidebarOpen} />
       <Stack
         screenOptions={{
           headerShown: false,
           contentStyle: {
-            backgroundColor: "transparent", // 👈 este es el truco
+            backgroundColor: "transparent",
           },
         }}
       />

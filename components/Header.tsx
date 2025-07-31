@@ -9,7 +9,7 @@ type Props = {
 
 const Header = ({ title, handleSidebar }: Props) => {
   return (
-    <View className="bg-white/10 border border-white/30 shadow-lg rounded-xl backdrop-blur-md px-4 py-5 web:px-6 web:py-4">
+    <View className="bg-white border border-white/30  rounded-xl backdrop-blur-md px-4 py-5 web:px-6 web:py-4">
       {/* Mobile Header */}
       <View className="web:hidden flex-row items-center justify-between relative">
         {/* Menú hamburguesa */}

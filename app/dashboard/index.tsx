@@ -48,7 +48,7 @@ const Dashboard = () => {
     change: string;
     changeType: "positive" | "negative";
   }) => (
-    <View className="rounded-xl p-4 shadow-sm">
+    <View className="rounded-xl p-4 bg-white">
       <View className="flex-row justify-between items-start mb-2">
         <Text className="text-gray-600 text-sm font-medium">{title}</Text>
         <Pressable>
@@ -65,10 +65,10 @@ const Dashboard = () => {
   );
 
   return (
-    <SafeAreaView className="flex-1 bg-white/10 backdrop-blur-md">
+    <SafeAreaView className="flex-1 ">
       <View className="flex-1 web:flex-row">
         {/* Desktop Sidebar */}
-        <View className="hidden web:flex web:w-64  shadow-sm">
+        <View className="hidden web:flex web:w-64 ">
           <View className="p-6">
             <View className="flex-row items-center mb-8">
               <View className="w-8 h-8 bg-blue-600 rounded-lg mr-3 items-center justify-center">
