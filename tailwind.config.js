@@ -1,4 +1,4 @@
-const colors = require('./tailwind/colors')
+const customTheme = require('./tailwind/colors');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -8,15 +8,7 @@ module.exports = {
   darkMode: "class", // Soporte para dark mode con clase 'dark'
   theme: {
     extend: {
-      colors,
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-      screens: {
-        web: "768px",
-      },
+      colors: customTheme
     },
   },
   plugins: [],

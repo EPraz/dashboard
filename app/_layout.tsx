@@ -1,28 +1,21 @@
-import { Header, MobileSidebar } from "@/components";
-import { Stack } from "expo-router";
-import { useState } from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { useColorScheme } from "nativewind"; // ✅ OJO: este es el correcto
+import { useEffect } from "react";
+import { Text } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import "../global.css";
 
 export default function RootLayout() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  const handleSidebar = (value: boolean) => {
-    setSidebarOpen(value);
-  };
-
+  const { colorScheme, setColorScheme } = useColorScheme();
+  useEffect(() => {
+    // Forzar modo oscuro al montar la app
+    // solo para test
+    setColorScheme("dark");
+  }, []);
   return (
-    <SafeAreaView className="flex-1 bg-gray-100">
-      <Header title="Dashboard" handleSidebar={handleSidebar} />
-      <MobileSidebar handleSidebar={handleSidebar} sidebarOpen={sidebarOpen} />
-      <Stack
-        screenOptions={{
-          headerShown: false,
-          contentStyle: {
-            backgroundColor: "transparent",
-          },
-        }}
-      />
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <SafeAreaView className="flex-1 items-center justify-center bg-bg-white ">
+        <Text className="text-black dark:text-white">Modo: {colorScheme}</Text>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }

@@ -4,3 +4,93 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --color-neutral-dpop-black-1: #FFFFFF;
+    --color-neutral-dpop-black-2: #F6F6F6;
+    --color-neutral-dpop-black-3: #E7E7E7;
+    --color-neutral-dpop-black-4: #D1D1D1;
+    --color-neutral-dpop-black-5: #B0B0B0;
+    --color-neutral-dpop-black-6: #888888;
+    --color-neutral-dpop-black-7: #6D6D6D;
+    --color-neutral-dpop-black-8: #5D5D5D;
+    --color-neutral-dpop-black-9: #4F4F4F;
+    --color-neutral-dpop-black-10: #454545;
+    --color-neutral-dpop-black-11: #1F1F1F;
+    --color-neutral-dpop-black-12: #121212;
+    --color-neutral-dpop-black-13: #000000;
+
+    --color-success-dpop-50: #FFFFFF;
+    --color-success-dpop-100: #E3F9F9;
+    --color-success-dpop-200: #D1F4DA;
+    --color-success-dpop-300: #BBEDC9;
+    --color-success-dpop-400: #9EE3B3;
+    --color-success-dpop-500: #76D596;
+    --color-success-dpop-600: #2CC974;
+    --color-success-dpop-700: #1EC26D;
+    --color-success-dpop-800: #12BD69;
+    --color-success-dpop-900: #00843A;
+
+    --color-pending-dpop-50: #FFF9E6;
+    --color-pending-dpop-100: #FFF0C8;
+    --color-pending-dpop-200: #FFE7B1;
+    --color-pending-dpop-300: #FFDC95;
+    --color-pending-dpop-400: #FFCB66;
+    --color-pending-dpop-500: #FCB94C;
+    --color-pending-dpop-600: #FAAD14;
+    --color-pending-dpop-700: #EFA200;
+    --color-pending-dpop-800: #ECA000;
+    --color-pending-dpop-900: #A56900;
+    --color-pending-dpop-950: #4C3717;
+
+    --color-primary-dpop-50: #FFF5ED;
+    --color-primary-dpop-100: #FEE9D6;
+    --color-primary-dpop-200: #FCCFAC;
+    --color-primary-dpop-300: #FAAC77;
+    --color-primary-dpop-400: #F67F41;
+    --color-primary-dpop-500: #F46425;
+    --color-primary-dpop-600: #E54411;
+    --color-primary-dpop-700: #BE3110;
+    --color-primary-dpop-800: #972815;
+    --color-primary-dpop-900: #792315;
+    --color-primary-dpop-950: #400E0A;
+
+    --color-secondary-dpop-50: #E7EDF7;
+    --color-secondary-dpop-700: #284B7C;
+    --color-secondary-dpop-800: #244168;
+    --color-secondary-dpop-900: #1D2F49;
+    --color-secondary-dpop-950: #111B2C;
+
+    --color-warning-dpop-50: #FFF7F6;
+    --color-warning-dpop-100: #FFEBE9;
+    --color-warning-dpop-200: #FFDBD6;
+    --color-warning-dpop-300: #FFCCC6;
+    --color-warning-dpop-400: #FFBCB5;
+    --color-warning-dpop-500: #F8A8A0;
+    --color-warning-dpop-600: #F08C84;
+    --color-warning-dpop-700: #EF4444;
+    --color-warning-dpop-800: #E13237;
+    --color-warning-dpop-900: #D3232C;
+    --color-warning-dpop-950: #661717;
+
+    --color-info-dpop-50: #F5F9FF;
+    --color-info-dpop-100: #E9F3FF;
+    --color-info-dpop-200: #DAECFF;
+    --color-info-dpop-300: #C2E0FF;
+    --color-info-dpop-400: #B3D6FE;
+    --color-info-dpop-500: #98C4F8;
+    --color-info-dpop-600: #70ADF3;
+    --color-info-dpop-700: #1990FF;
+    --color-info-dpop-800: #1184EC;
+    --color-info-dpop-900: #0072DC;
+    --color-info-dpop-950: #043463;
+
+    /* BACKGROUND Tokens */
+    --bg-white: var(--color-neutral-dpop-black-1);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* BACKGROUND Tokens */
+        --bg-white: var(--color-neutral-dpop-black-12);
+    }
+}
