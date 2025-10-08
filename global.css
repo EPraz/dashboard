@@ -85,12 +85,14 @@
     --color-info-dpop-950: #043463;
 
     /* BACKGROUND Tokens */
-    --bg-white: var(--color-neutral-dpop-black-1);
+    --bg-white: var(--color-info-dpop-800);
+    --text-token: var(--color-info-dpop-800);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         /* BACKGROUND Tokens */
         --bg-white: var(--color-neutral-dpop-black-12);
+        --text-token: var(--color-info-dpop-300);
     }
 }

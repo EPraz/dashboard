@@ -1,6 +1,8 @@
 
 module.exports = {
-    "bg-white": "var(--bg-white)",
+    // "bg-white": "var(--bg-white)",
+    "bg-white": "#fff",
+    "bg-white-dark": "#121212"
 }
 
 
