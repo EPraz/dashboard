@@ -1,7 +1,7 @@
+import { Stack } from "expo-router";
 import { useColorScheme } from "nativewind";
 import { useEffect } from "react";
-import { Pressable, Text } from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import "../global.css";
 
 export default function RootLayout() {
@@ -18,7 +18,7 @@ export default function RootLayout() {
 
   return (
     <SafeAreaProvider>
-      <SafeAreaView className="flex-1 items-center justify-center bg-bg-white dark:bg-bg-white-dark">
+      {/* <SafeAreaView className="flex-1 items-center justify-center bg-bg-white dark:bg-bg-white-dark">
         <Text className="text-txt-white-dark dark:text-txt-white mb-4">
           Modo: {colorScheme}
         </Text>
@@ -31,7 +31,10 @@ export default function RootLayout() {
             Toggle light/dark
           </Text>
         </Pressable>
-      </SafeAreaView>
+      </SafeAreaView> */}
+      {/* <ThemeProvider value={colorScheme === "dark" ? DefaultTheme : DarkTheme}> */}
+      <Stack screenOptions={{ headerShown: false }} />
+      {/* </ThemeProvider> */}
     </SafeAreaProvider>
   );
 }
