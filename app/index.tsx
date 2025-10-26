@@ -1,5 +1,5 @@
-import Dashboard from "./dashboard";
+import { Redirect } from "expo-router";
 
 export default function Index() {
-  return <Dashboard />;
+  return <Redirect href={"/dashboard"} />;
 }
