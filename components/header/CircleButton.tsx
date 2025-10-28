@@ -2,24 +2,25 @@ import { Pressable } from "react-native";
 
 export function CircleButton({
   children,
-  outline = true,
   onPress,
-  size = 40,
+  bgColor,
+  className,
 }: {
   children: React.ReactNode;
-  outline?: boolean;
   onPress?: () => void;
-  size?: number;
+  bgColor?: string;
+  className?: string;
 }) {
   return (
     <Pressable
       onPress={onPress}
       className={[
         "items-center justify-center rounded-full",
-        outline ? "bg-white border border-slate-200" : "bg-slate-50",
+        bgColor ? bgColor : "bg-white border border-[#E7E7E7]",
         "shadow-xs android:elevation-1",
+        className,
       ].join(" ")}
-      style={{ width: size, height: size }}
+      style={{ width: 36, height: 36 }}
     >
       {children}
     </Pressable>
