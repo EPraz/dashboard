@@ -1,7 +1,7 @@
-import { Text } from "react-native";
+import { DashboardProductsContainer } from "@/features";
 
 const DashboardProducts = () => {
-  return <Text>DashboardProducts</Text>;
+  return <DashboardProductsContainer />;
 };
 
 export default DashboardProducts;

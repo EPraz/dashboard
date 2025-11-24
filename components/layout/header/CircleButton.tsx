@@ -1,18 +1,23 @@
-import { Pressable } from "react-native";
+import { ReactNode } from "react";
+import { Pressable, PressableProps } from "react-native";
 
-export function CircleButton({
+type IconButtonProps = PressableProps & {
+  children: ReactNode;
+  bgColor?: string;
+};
+
+const CircleButton = ({
   children,
   onPress,
   bgColor,
-  className,
-}: {
-  children: React.ReactNode;
-  onPress?: () => void;
-  bgColor?: string;
-  className?: string;
-}) {
+  disabled,
+  className = "",
+  ...rest
+}: IconButtonProps) => {
   return (
     <Pressable
+      {...rest}
+      disabled={disabled}
       onPress={onPress}
       className={[
         "items-center justify-center rounded-full",
@@ -25,4 +30,5 @@ export function CircleButton({
       {children}
     </Pressable>
   );
-}
+};
+export default CircleButton;

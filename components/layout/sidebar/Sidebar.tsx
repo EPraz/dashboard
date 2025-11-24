@@ -74,6 +74,7 @@ export default function Sidebar({
         >
           {SECONDARY.map((it, index) => (
             <Pressable
+              key={index}
               className="gap-2 flex-row justify-start items-center"
               onPress={() => onChangeActive(it.key)}
             >

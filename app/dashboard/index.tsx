@@ -1,5 +1,5 @@
-import { Text } from "react-native";
+import { DashboardHomeContainer } from "@/features";
 
 export default function DashboardHome() {
-  return <Text className="text-slate-500">Container principal</Text>;
+  return <DashboardHomeContainer />;
 }

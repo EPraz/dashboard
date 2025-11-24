@@ -1,7 +1,7 @@
-import { Text } from "react-native";
+import { DashboardCampaignContainer } from "@/features";
 
 const DashboardCampaing = () => {
-  return <Text>DashboardCampaing</Text>;
+  return <DashboardCampaignContainer />;
 };
 
 export default DashboardCampaing;
