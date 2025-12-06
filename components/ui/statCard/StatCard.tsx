@@ -1,4 +1,5 @@
-import { iconLib, iconLibMap } from "@/components/ui/miniGraphic/MiniGraphic";
+import { iconLib, iconLibMap } from "@/constants";
+import * as theme from "@/tailwind/colors";
 import { Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import { Text, View } from "react-native";
@@ -10,7 +11,7 @@ type StatCardProps = {
   value: string;
   suffix?: string;
   badgeValue: string;
-  badgeColor: "#2CC974" | "#EF4444";
+  badgeColor: "success" | "fail";
   badgeLabel: string;
   special?: boolean;
 };
@@ -27,10 +28,8 @@ const StatCard = ({
   special = false,
 }: StatCardProps) => {
   const Icon = iconLibMap[iconLib];
-  const isPositive = badgeColor === "#2CC974";
+  const isPositive = badgeColor === "success";
 
-  const textMainColor = special ? "#E5E5E5" : "#121212";
-  const textSubColor = special ? "#E5E5E5" : "#888888";
   const cardMinWidth = 312;
   const cardMinHeight = 170;
 
@@ -47,25 +46,17 @@ const StatCard = ({
   const renderBadge = () => (
     <View className="flex-row gap-2">
       <View
-        className="flex-row items-center gap-1 px-1 py-[2px] rounded-full"
-        style={{
-          backgroundColor: special
-            ? "#E5E5E5"
-            : isPositive
-              ? "#F1FCF5"
-              : "#FEF2F2",
-        }}
+        className={`flex-row items-center gap-1 px-1 py-[2px] rounded-full ${special ? "bg-surface-disabled " : isPositive ? "bg-surface-successPale dark:bg-surface-successPaleDark" : "bg-surface-warningPale dark:bg-surface-warningPaleDark"} `}
       >
         <Ionicons
           name={isPositive ? "trending-up" : "trending-down"}
-          color={special ? "#F46425" : badgeColor}
           size={15}
           style={special ? valueShadow : undefined}
+          className={`${special ? "text-icon-primaryBoldConstant" : isPositive ? "text-icon-successBold dark:text-icon-successBoldDark" : "text-icon-warningBold dark:text-icon-warningBoldDark"}`}
         />
         <Text
+          className={`${special ? "text-icon-primaryBoldConstant" : isPositive ? "text-icon-successBold dark:text-icon-successBoldDark" : "text-icon-warningBold dark:text-icon-warningBoldDark"}`}
           style={{
-            color: special ? "#F46425" : badgeColor,
-            fontWeight: "600",
             ...(special ? valueShadow : {}),
           }}
         >
@@ -74,9 +65,8 @@ const StatCard = ({
       </View>
 
       <Text
-        className="text-[16px] leading-[130%]"
+        className={`leading-[130%] text-[16px]  ${special ? "text-surface-disabled" : "text-ink-sheen dark:text-ink-sheenDark"}`}
         style={{
-          color: textSubColor,
           ...(special ? titleShadow : {}),
         }}
       >
@@ -85,7 +75,7 @@ const StatCard = ({
     </View>
   );
 
-  // 🔹 contenido común
+  //  contenido común
   const content = (
     <View className="gap-4">
       {/* Header: icon + title */}
@@ -93,17 +83,15 @@ const StatCard = ({
         <Icon
           name={iconName as any}
           size={28}
-          color={special ? "#F46425" : undefined}
           className={
             special
-              ? "flex items-center justify-center rounded-full w-10 h-10 bg-[#E5E5E5]"
-              : "border border-[#E7E7E7] flex items-center justify-center rounded-full w-10 h-10"
+              ? "flex items-center justify-center rounded-full w-10 h-10 bg-surface-disabled text-icon-primaryBold "
+              : "border border-stroke-pale dark:border-stroke-paleDark  flex items-center justify-center rounded-full w-10 h-10 text-ink-bold dark:text-ink-boldDark bg-surface-main dark:bg-surface-mainDark "
           }
         />
         <Text
-          className="text-[20px] leading-[130%] font-semibold"
+          className={`${special ? "text-ink-constantDark" : "text-ink-bold dark:text-ink-boldDark"} text-[20px] leading-[130%] font-semibold text-inherit`}
           style={{
-            color: textMainColor,
             ...titleShadow,
           }}
         >
@@ -114,9 +102,9 @@ const StatCard = ({
       {/* Value + suffix */}
       <View className="gap-2 flex-row items-center w-fit">
         <Text
-          className="font-semibold leading-[120%] text-[40px]"
+          className={`font-semibold leading-[120%] text-[40px]  ${special ? "text-ink-pale" : "text-ink-bold dark:text-ink-boldDark"}`}
           style={{
-            color: special ? "#E5E5E5" : "#121212",
+            // color: special ? theme.neutral.black3 : theme.neutral.black12,
             ...valueShadow,
           }}
         >
@@ -124,11 +112,7 @@ const StatCard = ({
         </Text>
         {suffix && (
           <Text
-            className="text-[16px] leading-[130%]"
-            style={{
-              color: textSubColor,
-              ...valueShadow,
-            }}
+            className={`text-[16px] leading-[130%] ${special ? "text-surface-disabled" : "text-ink-sheen dark:text-ink-sheenDark"} `}
           >
             {suffix}
           </Text>
@@ -142,7 +126,7 @@ const StatCard = ({
   if (special) {
     return (
       <LinearGradient
-        colors={["#F46425", "#F5B40B"]}
+        colors={[theme.surface.primaryNormal, theme.surface.pendingBold]}
         start={{ x: 1, y: 0 }}
         end={{ x: 0, y: 1 }}
         style={{
@@ -161,7 +145,7 @@ const StatCard = ({
 
   return (
     <View
-      className="flex-1 gap-4 p-4 rounded-2xl flex flex-col items-start bg-white"
+      className="flex-1 gap-4 p-4 rounded-2xl flex flex-col items-start bg-surface-whiteCard dark:bg-surface-whiteCardDark"
       style={{
         minWidth: cardMinWidth,
         minHeight: cardMinHeight,

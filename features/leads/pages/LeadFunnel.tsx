@@ -25,7 +25,7 @@ const LeadFunnel = () => {
             value="1,250"
             suffix="leads"
             badgeValue="10.55%"
-            badgeColor="#2CC974"
+            badgeColor="success"
             badgeLabel="vs last month"
           />
           <StatCard
@@ -35,7 +35,7 @@ const LeadFunnel = () => {
             value="1,250"
             suffix="leads"
             badgeValue="10.55%"
-            badgeColor="#2CC974"
+            badgeColor="success"
             badgeLabel="vs last month"
           />
         </View>
@@ -66,7 +66,7 @@ const LeadFunnel = () => {
             value="1,250"
             suffix="leads"
             badgeValue="10.55%"
-            badgeColor="#2CC974"
+            badgeColor="success"
             badgeLabel="vs last month"
           />
           <MiniGraphic
@@ -80,10 +80,10 @@ const LeadFunnel = () => {
           <BreakdownBars />
         </View>
       </View>
-      <View className="flex p-5 gap-2 rounded-[20px] bg-white flex-1">
+      <View className="flex p-5 gap-2 rounded-[20px] bg-surface-whiteCard dark:bg-surface-whiteCardDark text-ink-bold dark:text-ink-boldDark flex-1 h-fit">
         <View className="flex items-center justify-between flex-row overflow-auto gap-20">
           <View className="">
-            <Text className="text-[20px] leading-[130%] font-semibold">
+            <Text className="text-[20px] leading-[130%] font-semibold text-inherit">
               Lead Source Breakdown
             </Text>
           </View>
@@ -92,18 +92,21 @@ const LeadFunnel = () => {
               disabled
               className="justify-evenly gap-2 h-[36px] w-auto px-4"
             >
-              <Text className="text-[12px] leading-[120%] font-bold">
+              <Text className="text-[12px] leading-[120%] font-bold text-inherit">
                 Channel
               </Text>
-              <SimpleLineIcons name="arrow-down" color="#000" />
+              <SimpleLineIcons name="arrow-down" className="text-inherit" />
             </IconButton>
             <IconButton disabled>
-              <Feather name="arrow-up-right" color="#000" size={24} />
+              <Feather
+                name="arrow-up-right"
+                className="text-inherit"
+                size={24}
+              />
             </IconButton>
           </View>
         </View>
         <View className="">
-          {/* <GeographicDistributionChart />*/}
           <LeadSourceBreakdownChart />
         </View>
       </View>

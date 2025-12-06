@@ -15,7 +15,7 @@ const Overview = () => {
             value="1,250"
             suffix="leads"
             badgeValue="10.55%"
-            badgeColor="#2CC974"
+            badgeColor="success"
             badgeLabel="vs last month"
           />
           <StatCard
@@ -25,7 +25,7 @@ const Overview = () => {
             value="850"
             suffix="active leads"
             badgeValue="12.45%"
-            badgeColor="#2CC974"
+            badgeColor="success"
             badgeLabel="vs last month"
           />
           <StatCard
@@ -35,7 +35,7 @@ const Overview = () => {
             value="$25,000"
             suffix="increase"
             badgeValue="5.75%"
-            badgeColor="#EF4444"
+            badgeColor="fail"
             badgeLabel="vs last month"
           />
           <StatCard
@@ -45,7 +45,7 @@ const Overview = () => {
             value="850"
             suffix="active leads"
             badgeValue="12.45%"
-            badgeColor="#2CC974"
+            badgeColor="success"
             badgeLabel="vs last month"
           />
         </View>

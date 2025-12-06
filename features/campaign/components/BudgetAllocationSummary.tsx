@@ -1,5 +1,8 @@
 import { IconButton } from "@/components";
+import * as theme from "@/tailwind/colors";
 import { Feather } from "@expo/vector-icons";
+import { useColorScheme } from "nativewind";
+import { useMemo } from "react";
 import { Text, View } from "react-native";
 import { VictoryPie } from "victory-native";
 
@@ -9,30 +12,64 @@ type AllocationItem = {
   color: string;
 };
 
-const allocationData: AllocationItem[] = [
-  { label: "Social Media", value: 45, color: "#FFE8D9" },
-  { label: "Paid Ads", value: 30, color: "#F8B787" },
-  { label: "Email", value: 20, color: "#F46425" },
-  { label: "Display Ads", value: 25, color: "#C53B12" },
-];
-
-const total = allocationData.reduce((sum, item) => sum + item.value, 0);
 const BudgetAllocationSummary = () => {
+  const { colorScheme } = useColorScheme();
+  const isDark = colorScheme === "dark";
+
+  const allocationData: AllocationItem[] = useMemo(
+    () => [
+      {
+        label: "Social Media",
+        value: 45,
+        color: isDark
+          ? theme.surface.primaryPaleDark
+          : theme.surface.primaryPale,
+      },
+      {
+        label: "Paid Ads",
+        value: 30,
+        color: isDark
+          ? theme.surface.primarySheenDark
+          : theme.surface.primarySheen,
+      },
+      {
+        label: "Email",
+        value: 20,
+        color: isDark
+          ? theme.surface.primaryNormalDark
+          : theme.surface.primaryNormal,
+      },
+      {
+        label: "Display Ads",
+        value: 25,
+        color: isDark
+          ? theme.surface.primaryBold
+          : theme.surface.primaryBoldDark,
+      },
+    ],
+    [isDark]
+  );
+
+  const total = useMemo(
+    () => allocationData.reduce((sum, item) => sum + item.value, 0),
+    [allocationData]
+  );
+
   return (
-    <View className="relative min-w-[260px] bg-white rounded-3xl p-5 gap-4">
+    <View className="relative min-w-[260px] bg-surface-whiteCard dark:bg-surface-whiteCardDark text-ink-bold dark:text-ink-boldDark rounded-3xl p-5 gap-4">
       {/* Header */}
       <View className="flex-row items-start justify-between">
         <View className="gap-1 w-[70%]">
-          <Text className="text-[16px] leading-[130%] font-semibold">
+          <Text className="text-[16px] leading-[130%] font-semibold text-inherit">
             Budget Allocation
           </Text>
-          <Text className="text-[16px] leading-[130%] font-semibold">
+          <Text className="text-[16px] leading-[130%] font-semibold text-inherit">
             Summary
           </Text>
         </View>
 
         <IconButton>
-          <Feather name="arrow-up-right" color="#000" size={20} />
+          <Feather name="arrow-up-right" className="text-inherit" size={20} />
         </IconButton>
       </View>
 
@@ -53,7 +90,7 @@ const BudgetAllocationSummary = () => {
           width={280}
           height={280}
           colorScale={allocationData.map((item) => item.color)}
-          labels={() => ""} // sin labels en el arco
+          labels={() => ""}
           style={{
             data: {
               fill: ({ datum }) => (datum as any).color,
@@ -62,16 +99,16 @@ const BudgetAllocationSummary = () => {
           }}
         />
 
-        {/* Texto central ($150K / Total Allocation) */}
+        {/* Center text */}
         <View className="absolute top-1/2 -translate-y-1/2 items-center">
-          <Text className="text-[24px] font-semibold text-[#121212]">
-            $150K
+          <Text className="text-[24px] font-semibold text-inherit">$150K</Text>
+          <Text className="text-[12px] text-ink-sheen dark:text-ink-sheenDark">
+            Total Allocation
           </Text>
-          <Text className="text-[12px] text-[#9CA3AF]">Total Allocation</Text>
         </View>
       </View>
 
-      {/* Leyenda */}
+      {/* Legend */}
       <View className="absolute bottom-[10%] left-[26%] w-[200px] h-[40px] flex-row flex-wrap gap-3 items-center justify-center">
         {allocationData.map((item) => (
           <View key={item.label} className="flex-row items-center gap-1">
@@ -79,7 +116,9 @@ const BudgetAllocationSummary = () => {
               className="w-[16px] h-[16px] rounded-full"
               style={{ backgroundColor: item.color }}
             />
-            <Text className="text-[12px] text-[#4B5563]">{item.label}</Text>
+            <Text className="text-[12px] text-ink-sheen dark:text-ink-sheenDark">
+              {item.label}
+            </Text>
           </View>
         ))}
       </View>

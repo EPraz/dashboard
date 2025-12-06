@@ -23,7 +23,10 @@ export default function Header({ collapsed, handleSetCollapse }: Props) {
   const contentWidth = Math.min(screenWidth, CONTENT_MAX_WIDTH);
 
   return (
-    <SafeAreaView edges={["top", "left", "right"]} className="bg-white">
+    <SafeAreaView
+      edges={["top", "left", "right"]}
+      className="bg-surface-main dark:bg-surface-mainDark"
+    >
       {/* Contenedor que centra el contenido horizontalmente */}
       <View className="w-full items-center">
         {/* Contenedor limitado a 1440px */}
@@ -39,12 +42,15 @@ export default function Header({ collapsed, handleSetCollapse }: Props) {
             onPress={() => Keyboard.dismiss()}
             className="hidden lg:flex"
           >
-            <View className="hidden lg:flex flex-row items-center w-[400px] h-[52px] gap-3 px-5 rounded-[100px] bg-[#F7F7F7]">
-              <Ionicons name="search" size={24} color="#9ca3af" />
+            <View className="hidden lg:flex flex-row items-center w-[400px] h-[52px] gap-3 px-5 rounded-[100px] bg-surface-pale dark:bg-surface-paleDark ">
+              <Ionicons
+                name="search"
+                size={24}
+                className="text-icon-sheen dark:text-icon-sheenDark"
+              />
               <TextInput
                 placeholder="Search Anything…"
-                placeholderTextColor="#888888"
-                className="flex-1 text-[14px] outline-none focus:outline-none focus:ring-0"
+                className="flex-1 text-[14px] outline-none focus:outline-none focus:ring-0 placeholder:text-ink-sheen dark:placeholder:text-ink-sheenDark"
                 returnKeyType="search"
                 submitBehavior="blurAndSubmit"
               />
@@ -53,20 +59,26 @@ export default function Header({ collapsed, handleSetCollapse }: Props) {
 
           <View className="flex-row items-center gap-3">
             <CircleButton className="lg:hidden flex">
-              <Ionicons name="search" size={15} color="#888888" />
+              <Ionicons
+                name="search"
+                size={15}
+                className="text-icon-bold dark:text-icon-boldDark"
+              />
             </CircleButton>
             <CircleButton>
               <Ionicons
                 name="chatbubble-ellipses-outline"
                 size={15}
-                color="#0f172a"
+                className="text-icon-bold dark:text-icon-boldDark"
+                // color="#0f172a"
               />
             </CircleButton>
             <CircleButton>
               <Ionicons
                 name="notifications-outline"
                 size={15}
-                color="#0f172a"
+                className="text-icon-bold dark:text-icon-boldDark"
+                // color="#0f172a"
               />
             </CircleButton>
             <CircleButton className="lg:hidden flex">
@@ -79,9 +91,9 @@ export default function Header({ collapsed, handleSetCollapse }: Props) {
               />
             </CircleButton>
 
-            <View className="hidden lg:flex h-6 w-[1px] bg-slate-200 mx-1" />
+            <View className="hidden lg:flex h-6 w-[1px] bg-stroke-pale dark:bg-stroke-paleDark mx-1" />
 
-            <Pressable className="hidden lg:flex flex-row items-center bg-white border border-slate-200 rounded-full pl-2 pr-2.5 h-11 gap-2">
+            <Pressable className="hidden lg:flex flex-row items-center bg-surface-main dark:bg-surface-mainDark border border-stroke-pale dark:border-stroke-paleDark rounded-full pl-2 pr-2.5 h-11 gap-2">
               <Image
                 source={{
                   uri: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=256&auto=format&fit=crop",
@@ -90,22 +102,29 @@ export default function Header({ collapsed, handleSetCollapse }: Props) {
                 contentFit="cover"
               />
               <View className="pr-1">
-                <Text className="text-[13px] leading-4 font-semibold text-slate-900">
+                <Text className="text-[13px] leading-4 font-semibold text-ink-bold dark:text-ink-boldDark">
                   Hanna Calzoni
                 </Text>
-                <Text className="text-[12px] leading-4 text-slate-500">
+                <Text className="text-[12px] leading-4 text-ink-sheen dark:text-ink-sheenDark">
                   Admin Store
                 </Text>
               </View>
-              <Ionicons name="chevron-down" size={18} color="#0f172a" />
+              <Ionicons
+                name="chevron-down"
+                size={18}
+                className="text-icon-bold dark:text-icon-boldDark"
+              />
             </Pressable>
 
             <CircleButton
-              className="lg:hidden flex"
+              className="lg:hidden flex bg-surface-primaryPale dark:bg-surface-primaryPaleDark"
               onPress={() => handleSetCollapse(!collapsed)}
-              bgColor="bg-[#FFF5ED]"
             >
-              <Ionicons name="menu" size={15} color="#F46425" />
+              <Ionicons
+                name="menu"
+                size={15}
+                className="text-icon-primaryBold dark:text-icon-primaryBoldDark"
+              />
             </CircleButton>
           </View>
         </View>

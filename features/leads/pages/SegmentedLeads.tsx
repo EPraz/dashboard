@@ -1,13 +1,10 @@
 import { MiniGraphic } from "@/components";
-import { Feather, SimpleLineIcons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import { useState } from "react";
-import { Pressable, Text, View } from "react-native";
-import {
-  GeographicDistributionChart,
-  LeadSourceBreakdownChart,
-  Table,
-} from "../components";
+import { Text, View } from "react-native";
+import { Table } from "../components";
+import GeographicContainer from "../components/geographicDistributionChart/GeographicContainer";
+import LeadSourceContainer from "../components/leadSourceBreakdownChart/LeadSourceContainer";
 
 const SegmentedLeads = () => {
   const [showFullTable, setShowFullTable] = useState(false);
@@ -23,62 +20,10 @@ const SegmentedLeads = () => {
   return (
     <View className="grid grid-cols-1 lg:grid-cols-2 gap-2 xl:gap-5 lg:grid-rows-2">
       <View className="row-span-2 gap-2 xl:gap-5 ">
-        <View className="flex p-5 gap-2 xl:gap-5  rounded-[20px] bg-white">
-          <View className="flex items-center justify-between flex-row overflow-auto gap-20">
-            <View className="">
-              <Text className="text-[20px] leading-[130%] font-semibold">
-                Lead Source Breakdown
-              </Text>
-            </View>
-            <View className="gap-3 flex-row items-center justify-evenly">
-              <Pressable className="flex-row bg-white items-center justify-evenly gap-2 xl:gap-5 w-[115px] h-[36px] py-2 px-4 rounded-full border border-[#E7E7E7]">
-                <Text className="text-[12px] leading-[120%] font-bold">
-                  Channel
-                </Text>
-                <SimpleLineIcons name="arrow-down" color="#000" />
-              </Pressable>
-              <Pressable className="flex-row bg-white items-center justify-center w-[36px] h-[36px] rounded-full border border-[#E7E7E7]">
-                <Feather name="arrow-up-right" color="#000" size={24} />
-              </Pressable>
-            </View>
-          </View>
-          <View className="">
-            {/* <GeographicDistributionChart />*/}
-            <LeadSourceBreakdownChart />
-          </View>
-        </View>
+        <LeadSourceContainer />
+
         <View className="xl:flex xl:flex-wrap xl:flex-row flex-1 gap-2 xl:gap-5 ">
-          <View className="flex flex-1 p-5 gap-2 xl:gap-5  rounded-[20px] bg-white">
-            <View className="flex items-center justify-between flex-row gap-2 w-full ">
-              <Text className="text-[20px] leading-[130%] font-semibold">
-                Geographic <br />
-                Distribution of Leads
-              </Text>
-              <View className="gap-3 flex-row items-center justify-evenly ">
-                <Pressable className="flex-row bg-white items-center justify-center w-[36px] h-[36px] rounded-full border border-[#E7E7E7]">
-                  <Feather name="arrow-up-right" color="#000" size={24} />
-                </Pressable>
-              </View>
-            </View>
-            <View className="flex items-center justify-between flex-row">
-              <Pressable className="flex-row bg-white items-center justify-evenly gap-2  h-[36px] py-2 px-4 rounded-full border border-[#E7E7E7]">
-                <Text className="text-[12px] leading-[120%] font-bold">
-                  All Region
-                </Text>
-                <SimpleLineIcons name="arrow-down" color="#000" />
-              </Pressable>
-              <Pressable className="flex-row bg-white items-center justify-evenly gap-2  h-[36px] py-2 px-4 rounded-full border border-[#E7E7E7]">
-                <Text className="text-[12px] leading-[120%] font-bold">
-                  Top Countries
-                </Text>
-                <SimpleLineIcons name="arrow-down" color="#000" />
-              </Pressable>
-            </View>
-            <View className="">
-              <GeographicDistributionChart />
-              {/* <LeadSourceBreakdownChart /> */}
-            </View>
-          </View>
+          <GeographicContainer />
           <View className=" flex-wrap gap-2 xl:gap-5 ">
             <MiniGraphic
               title="Top Lead Source"

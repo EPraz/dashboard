@@ -2,23 +2,21 @@ import { Header, Sidebar } from "@/components";
 import { SidebarKey, SidebarRoutes } from "@/constants";
 import { BlurView } from "expo-blur";
 import { Slot, usePathname, useRouter } from "expo-router";
+import { useColorScheme } from "nativewind";
 import { useState } from "react";
-import {
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  useWindowDimensions,
-  View,
-} from "react-native";
+import { Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function DashboardLayout() {
   const router = useRouter();
   const pathname = usePathname();
   const [collapsed, setCollapsed] = useState(true);
-  const { width: screenWidth } = useWindowDimensions();
-  const CONTENT_MAX_WIDTH = 1440;
-  const contentWidth = Math.min(screenWidth, CONTENT_MAX_WIDTH);
+  const { colorScheme, setColorScheme } = useColorScheme();
+
+  const toggleTheme = () => {
+    setColorScheme(colorScheme === "dark" ? "light" : "dark");
+  };
+
   const activeKey =
     (Object.entries(SidebarRoutes).find(
       ([, path]) => path === pathname
@@ -35,7 +33,7 @@ export default function DashboardLayout() {
     setCollapsed(value);
   };
   return (
-    <SafeAreaView className="flex-1 bg-white relative">
+    <SafeAreaView className="flex-1 bg-surface-main dark:bg-surface-mainDark relative">
       {!collapsed && (
         <Pressable
           onPress={() => handleSetCollapse(true)}
@@ -53,20 +51,17 @@ export default function DashboardLayout() {
         collapsed={collapsed}
         activeKey={activeKey}
         onChangeActive={handlerOnChangeActive}
-        onToggleTheme={() => console.log("toggle theme")}
+        onToggleTheme={toggleTheme}
         onLogout={() => console.log("logout")}
         handleSetCollapse={handleSetCollapse}
       />
 
-      <View className="flex-1 flex-row bg-[#F7F7F7] ">
+      <View className="flex-1 flex-row -1 bg-surface-pale dark:bg-surface-paleDark ">
         <ScrollView
           className="flex-1"
           contentContainerClassName={`p-4 md:p-6 lg:p-[20px] gap-4 lg:ml-[92px]`}
         >
-          {/* <View style={{ width: contentWidth }}> */}
-          <View
-          // style={{ width: "100%", maxWidth: 1440 - 92, alignSelf: "center" }}
-          >
+          <View>
             <Slot />
           </View>
         </ScrollView>

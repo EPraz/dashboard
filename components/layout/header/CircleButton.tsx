@@ -20,8 +20,8 @@ const CircleButton = ({
       disabled={disabled}
       onPress={onPress}
       className={[
-        "items-center justify-center rounded-full",
-        bgColor ? bgColor : "bg-white border border-[#E7E7E7]",
+        "items-center justify-center rounded-full border border-stroke-pale dark:border-stroke-paleDark",
+        bgColor ? bgColor : "bg-surface-main dark:bg-surface-mainDark ",
         "shadow-xs android:elevation-1",
         className,
       ].join(" ")}

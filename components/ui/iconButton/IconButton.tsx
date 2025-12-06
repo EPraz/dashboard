@@ -13,10 +13,11 @@ const IconButton = ({
   const baseClasses = `
     flex-row items-center justify-center
     w-[36px] h-[36px] rounded-full
-    border border-[#E7E7E7]
+    border border-stroke-pale dark:border-stroke-paleDark
+    bg-surface-main dark:bg-surface-mainDark
   `;
 
-  const disabledClasses = disabled ? "opacity-40 border-[#E0E0E0]" : "";
+  const disabledClasses = disabled ? "opacity-40 " : "";
 
   return (
     <Pressable

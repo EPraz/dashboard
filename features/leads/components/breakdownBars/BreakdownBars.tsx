@@ -17,25 +17,29 @@ const leadSources: LeadSourceRowProps[] = [
 const BreakdownBars = () => {
   return (
     <View
-      className={`min-w-[312px] flex-1 relative bg-white p-5 gap-5 rounded-3xl overflow-hidden`}
+      className={`min-w-[312px] flex-1 relative bg-surface-whiteCard dark:bg-surface-whiteCardDark text-ink-bold dark:text-ink-boldDark p-5 gap-5 rounded-3xl overflow-hidden`}
     >
       <View className="gap-2">
         <View className="w-full flex-1 flex-row items-center justify-between gap-5">
-          <Text className="text-[20px] leading-[130%] font-semibold">
+          <Text className="text-[20px] leading-[130%] font-semibold text-inherit">
             Top Performing Sources
           </Text>
           <IconButton disabled>
-            <Feather name="arrow-up-right" color="#000" size={24} />
+            <Feather
+              name="arrow-up-right"
+              className={"text-inherit"}
+              size={24}
+            />
           </IconButton>
         </View>
         <IconButton
           disabled
-          className="justify-evenly gap-2 h-[36px] w-fit  px-4"
+          className="justify-evenly gap-2 h-[36px] w-fit px-4"
         >
-          <Text className="text-[12px] leading-[120%] font-bold">
+          <Text className="text-[12px] leading-[120%] font-bold text-inherit">
             Conversion Rate
           </Text>
-          <SimpleLineIcons name="arrow-down" color="#000" />
+          <SimpleLineIcons name="arrow-down" className={"text-inherit"} />
         </IconButton>
       </View>
       <View className="">
@@ -44,15 +48,15 @@ const BreakdownBars = () => {
           return (
             <View className="mb-5">
               <View className="flex-row items-center justify-between mb-2">
-                <Text className="text-[14px] leading-[130%] font-bold">
+                <Text className="text-[14px] leading-[130%] font-bold text-inherit">
                   {label}
                 </Text>
-                <Text className="text-[16px] font-semibold text-[#F46425]">
+                <Text className="text-[16px] font-semibold text-surface-primaryNormal dark:text-surface-primaryNormalDark">
                   {value}%
                 </Text>
               </View>
 
-              <View className="w-full h-[20px] bg-[#FFF4EC] rounded-sm overflow-hidden">
+              <View className="w-full h-[20px] bg-surface-main dark:bg-surface-primaryPaleDark rounded-r-sm overflow-hidden">
                 {/* Barra llena */}
                 <View
                   className="h-full bg-[#F46425] rounded-md"

@@ -17,7 +17,7 @@ const DashboardTransactionsContainer = () => {
           value="$45,678"
           suffix="in this month"
           badgeValue="5.56%"
-          badgeColor="#2CC974"
+          badgeColor="success"
           badgeLabel="vs last month"
         />
         <StatCard
@@ -27,7 +27,7 @@ const DashboardTransactionsContainer = () => {
           value="1,235"
           suffix="orders in this month"
           badgeValue="2.65%"
-          badgeColor="#EF4444"
+          badgeColor="fail"
           badgeLabel="vs last month"
         />
         <StatCard
@@ -37,7 +37,7 @@ const DashboardTransactionsContainer = () => {
           value="$37.02"
           suffix="per customer"
           badgeValue="10.55%"
-          badgeColor="#2CC974"
+          badgeColor="success"
           badgeLabel="vs last month"
         />
         <StatCard
@@ -47,7 +47,7 @@ const DashboardTransactionsContainer = () => {
           value="$1,230"
           suffix="3% of total sales"
           badgeValue="3.75%"
-          badgeColor="#EF4444"
+          badgeColor="fail"
           badgeLabel="vs last month"
         />
       </View>

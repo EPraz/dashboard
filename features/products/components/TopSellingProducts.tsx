@@ -54,20 +54,20 @@ const TopSellingProductsCard: React.FC = () => {
   const [featured, ...others] = sortedProducts;
 
   return (
-    <View className="min-w-[312px] relative bg-white p-5 gap-5 rounded-3xl overflow-hidden">
+    <View className="min-w-[312px] relative bg-surface-whiteCard dark:bg-surface-whiteCardDark text-ink-bold dark:text-ink-boldDark p-5 gap-5 rounded-3xl overflow-hidden">
       <View className="gap-2">
         <View className="w-full flex-1 flex-row items-center justify-between gap-5">
-          <Text className="text-[20px] leading-[130%] font-semibold">
+          <Text className="text-[20px] leading-[130%] font-semibold text-inherit">
             Top Selling Products
           </Text>
         </View>
 
         <View className="flex-col gap-3 items-start">
-          {/* 🔸 Producto destacado (mayor revenue) */}
+          {/* Producto destacado (mayor revenue) */}
           {featured && (
             <View className="flex-row gap-4 items-center justify-between">
-              <IconButton className="bg-[#F46425] w-[32px] h-[32px] p-2 gap-2">
-                <Text className="text-[12px] leading-[120%] font-bold text-white">
+              <IconButton className="dark:bg-surface-primaryNormalConstant w-[32px] h-[32px] p-2 gap-2">
+                <Text className="text-[12px] leading-[120%] font-bold text-inherit">
                   1
                 </Text>
               </IconButton>
@@ -81,20 +81,20 @@ const TopSellingProductsCard: React.FC = () => {
               </View>
 
               <View className="flex-col gap-2">
-                <Text className="text-[12px] leading-[140%] font-bold text-[#121212]">
+                <Text className="text-[12px] leading-[140%] font-bold text-inherit">
                   {featured.name}
                 </Text>
-                <Text className="text-[#F46425] text-[20px] leading-[130%] font-semibold">
+                <Text className="text-surface-primaryNormalConstant text-[20px] leading-[130%] font-semibold ">
                   {formatCurrency(featured.revenue)}
                 </Text>
-                <Text className="text-[#888888] text-[12px] leading-[140%] ">
+                <Text className="text-ink-sheen dark:text-ink-sheenDark text-[12px] leading-[140%]">
                   Total Revenues Sales
                 </Text>
               </View>
             </View>
           )}
 
-          {/* 🔹 Resto de productos en orden por revenue */}
+          {/*  Resto de productos en orden por revenue */}
           {others.map((product, index) => {
             const rank = index + 2; // 2,3,4,5...
 
@@ -103,8 +103,8 @@ const TopSellingProductsCard: React.FC = () => {
                 key={product.id}
                 className="flex flex-row gap-2 items-center justify-start overflow-hidden w-full"
               >
-                <IconButton className="bg-[#FFF5ED] w-[23px] h-[23px] p-2 gap-2">
-                  <Text className="text-[12px] leading-[120%] font-bold text-[#F46425]">
+                <IconButton className="bg-surface-primaryPale dark:bg-surface-primaryPaleDark w-[23px] h-[23px] p-2 gap-2">
+                  <Text className="text-[12px] leading-[120%] font-bold text-surface-primaryNormalConstant">
                     {rank}
                   </Text>
                 </IconButton>
@@ -118,10 +118,10 @@ const TopSellingProductsCard: React.FC = () => {
                 </View>
 
                 <View className="flex-row items-center justify-between gap-2">
-                  <Text className="text-[12px] leading-[140%] font-semibold text-[#121212]">
+                  <Text className="text-[12px] leading-[140%] font-semibold text-inherit">
                     {product.name}
                   </Text>
-                  <Text className="text-[#F46425] text-[12px] leading-[140%] font-semibold">
+                  <Text className="text-surface-primaryNormalConstant text-[12px] leading-[140%] font-semibold">
                     {formatCurrency(product.revenue)}
                   </Text>
                 </View>
@@ -132,7 +132,7 @@ const TopSellingProductsCard: React.FC = () => {
       </View>
 
       <View>
-        <Pressable className="flex items-center justify-center h-[40px] gap-2 px-3 py-2 bg-[#FFF5ED] rounded-full">
+        <Pressable className="flex items-center justify-center h-[40px] gap-2 px-3 py-2 bg-surface-primaryPale dark:bg-surface-primaryPaleDark rounded-full">
           <Text className="text-[#F46425] font-bold text-[16px] leading-[120%]">
             View More
           </Text>

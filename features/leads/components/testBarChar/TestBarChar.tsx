@@ -1,3 +1,5 @@
+import * as theme from "@/tailwind/colors";
+import { useColorScheme } from "nativewind";
 import { ScrollView, View } from "react-native";
 import {
   VictoryAxis,
@@ -5,7 +7,6 @@ import {
   VictoryChart,
   VictoryTheme,
 } from "victory-native";
-
 const chartData = [
   { month: "January", value: 70 },
   { month: "February", value: 80 },
@@ -32,7 +33,10 @@ const chartData3 = [
   { month: "June", value: 120 },
 ];
 export type ChartSelector = "chartData" | "chartData2" | "chartData3";
+
 const TestBarChart = ({ which = "chartData" }: { which?: ChartSelector }) => {
+  const { colorScheme } = useColorScheme();
+  const isDark = colorScheme == "dark";
   const chartDataMap: Record<ChartSelector, any> = {
     chartData,
     chartData2,
@@ -86,8 +90,19 @@ const TestBarChart = ({ which = "chartData" }: { which?: ChartSelector }) => {
             cornerRadius={{ top: 18, bottom: 0 }}
             style={{
               data: {
-                fill: ({ datum }) =>
-                  datum.month === "May" ? "#F46425" : "#FCCFAC",
+                fill: ({ datum }) => {
+                  const isMay = datum.month === "May";
+
+                  if (isMay) {
+                    // special bar
+                    return theme.surface.primaryNormalConstant;
+                  }
+
+                  // default bars
+                  return isDark
+                    ? theme.surface.primaryPaleDark
+                    : theme.surface.primaryPale;
+                },
               },
             }}
           />

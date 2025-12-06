@@ -1,31 +1,11 @@
 import { IconButton } from "@/components";
-import {
-  EvilIcons,
-  Feather,
-  FontAwesome,
-  Fontisto,
-  Ionicons,
-  MaterialCommunityIcons,
-  MaterialIcons,
-  Octicons,
-  Zocial,
-} from "@expo/vector-icons";
+import { iconLib, iconLibMap } from "@/constants";
+import { Feather } from "@expo/vector-icons";
 import { Text, View } from "react-native";
 import TestBarChart, {
   ChartSelector,
 } from "../../../features/leads/components/testBarChar/TestBarChar";
 
-export type iconLib = "mc" | "ft" | "ion" | "zc" | "mi" | "fa" | "ev" | "oc";
-export const iconLibMap: Record<iconLib, any> = {
-  mc: MaterialCommunityIcons,
-  ion: Ionicons,
-  ft: Fontisto,
-  zc: Zocial,
-  mi: MaterialIcons,
-  fa: FontAwesome,
-  ev: EvilIcons,
-  oc: Octicons,
-};
 type Props = {
   title: string;
   subTitle?: string;
@@ -53,15 +33,22 @@ const MiniGraphic = ({
 
   return (
     <View
-      className={` min-w-[312px] flex-1 relative bg-white  p-5 gap-5 rounded-3xl overflow-hidden`}
+      className={` min-w-[312px] flex-1 relative bg-surface-whiteCard dark:bg-surface-whiteCardDark p-5 gap-5 rounded-3xl overflow-hidden`}
     >
       <View className="gap-2">
         <View className="w-full flex-1 flex-row items-center justify-between gap-2">
-          <Text className="text-[20px] leading-[130%] font-semibold">
+          <Text className="text-[20px] leading-[130%] font-semibold text-ink-bold dark:text-ink-boldDark">
             {title}
           </Text>
-          <IconButton disabled>
-            <Feather name="arrow-up-right" color="#000" size={24} />
+          <IconButton
+            disabled
+            className="bg-surface-main dark:bg-surface-mainDark"
+          >
+            <Feather
+              name="arrow-up-right"
+              className="text-icon-bold dark:text-icon-boldDark"
+              size={24}
+            />
           </IconButton>
         </View>
 
@@ -71,26 +58,26 @@ const MiniGraphic = ({
               <Icon
                 name={iconName as any}
                 size={28}
-                className="border  border-[#F46425] bg-[#F46425] text-white flex items-center justify-center rounded-full w-10 h-10"
+                className="border border-stroke-primaryNormal dark:border-stroke-primaryPaleDark bg-surface-primaryNormal  dark:bg-surface-primaryNormalDark text-ink-main dark:text-ink-mainDark flex items-center justify-center rounded-full w-10 h-10"
               />
             )}
-            <Text className="font-semibold leading-[130%] text-[16px] text-[#121212]">
+            <Text className="font-semibold leading-[130%] text-[16px] text-ink-bold dark:text-ink-boldDark">
               {subTitle}
             </Text>
           </View>
         )}
 
         <View className="gap-2 flex-row items-center w-fit">
-          <Text className="font-semibold leading-[120%] text-[40px] text-[#F46425] ">
+          <Text className="font-semibold leading-[120%] text-[40px] text-ink-primaryBold dark:text-ink-primaryBoldDark ">
             {value}
           </Text>
           {valueLabel && (
-            <Text className="text-[16px] leading-[130%] text-[#121212] ">
+            <Text className="text-[16px] leading-[130%] text-ink-bold dark:text-ink-boldDark">
               {valueLabel}
             </Text>
           )}
         </View>
-        <Text className="text-[14px] leading-[120%] text-[#888888] ">
+        <Text className="text-[14px] leading-[120%] text-ink-sheen dark:text-ink-sheenDark ">
           {suffix}
         </Text>
       </View>

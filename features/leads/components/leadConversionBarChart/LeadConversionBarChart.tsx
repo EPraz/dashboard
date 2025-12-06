@@ -1,4 +1,6 @@
-import { ScrollView, View } from "react-native";
+import * as theme from "@/tailwind/colors";
+import { useColorScheme } from "nativewind";
+import { ScrollView, useWindowDimensions, View } from "react-native";
 import {
   VictoryAxis,
   VictoryBar,
@@ -22,50 +24,97 @@ const chartData = [
 ];
 
 const LeadConversionBarChart = () => {
+  const { colorScheme } = useColorScheme();
+  const isDark = colorScheme == "dark";
+  const { width } = useWindowDimensions();
+  const isMobile = width < 768;
+
+  const Content = () => (
+    <VictoryChart
+      width={chartWidth}
+      height={260}
+      domain={{ y: [0, 100] }}
+      theme={VictoryTheme.material}
+      padding={{ top: 5, bottom: 50, left: 50, right: 20 }}
+      domainPadding={{ x: [50, 50], y: [0, 0] }}
+    >
+      {/* EJE Y */}
+      <VictoryAxis
+        dependentAxis
+        tickFormat={(t) => `${t}%rece`}
+        style={{
+          axis: { stroke: "transparent" },
+          grid: {
+            stroke: "transparent",
+            strokeWidth: 0,
+          },
+          tickLabels: {
+            fontSize: 12,
+            fill: isDark ? theme.ink.boldDark : theme.ink.bold,
+          },
+        }}
+      />
+
+      {/* EJE X */}
+      <VictoryAxis
+        tickValues={chartData.map((d) => d.month)}
+        style={{
+          axis: { stroke: "transparent" }, // sin línea de eje
+          tickLabels: {
+            fontSize: 12,
+            fill: isDark ? theme.ink.boldDark : theme.ink.bold,
+          },
+          grid: {
+            stroke: "transparent",
+            strokeWidth: 0,
+          },
+        }}
+      />
+
+      <VictoryBar
+        data={chartData}
+        x="month"
+        y="value"
+        barWidth={56}
+        cornerRadius={{ top: 28, bottom: 0 }}
+        style={{
+          data: {
+            fill: ({ datum }) => {
+              const isMay = datum.month === "May";
+
+              if (isMay) {
+                // special bar
+                return isDark
+                  ? theme.surface.primaryNormalDark
+                  : theme.surface.primaryNormal;
+              }
+
+              // default bars
+              return isDark
+                ? theme.surface.buttonPrimaryDark
+                : theme.surface.primarySheen;
+            },
+          },
+        }}
+      />
+    </VictoryChart>
+  );
+
   return (
-    <View className="">
-      {/* Scroll horizontal solo si el chart es más ancho que la pantalla */}
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        <VictoryChart
-          width={chartWidth}
-          height={260}
-          domain={{ y: [0, 100] }}
-          theme={VictoryTheme.material}
-          padding={{ top: 5, bottom: 50, left: 50, right: 20 }}
-          domainPadding={{ x: [50, 50], y: [0, 0] }}
+    <View className="w-full flex-1">
+      {isMobile ? (
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={true}
+          style={{ flex: 1 }}
         >
-          <VictoryAxis
-            dependentAxis
-            style={{
-              axis: { stroke: "transparent" },
-              grid: { stroke: "#E5E7EB", strokeWidth: 1 },
-              tickLabels: { fontSize: 14, fill: "#9CA3AF" },
-            }}
-          />
-
-          <VictoryAxis
-            tickValues={chartData.map((d) => d.month)}
-            style={{
-              axis: { stroke: "#E5E7EB" },
-              tickLabels: { fontSize: 14, fill: "#111827" },
-            }}
-          />
-
-          <VictoryBar
-            data={chartData}
-            x="month"
-            y="value"
-            barWidth={55}
-            cornerRadius={{ top: 28, bottom: 0 }}
-            style={{
-              data: {
-                fill: ({ datum }) =>
-                  datum.month === "May" ? "#F46425" : "#FCCFAC",
-              },
-            }}
-          />
-        </VictoryChart>
-      </ScrollView>
+          <View style={{ minWidth: 600 }}>
+            <Content />
+          </View>
+        </ScrollView>
+      ) : (
+        <Content />
+      )}
     </View>
   );
 };

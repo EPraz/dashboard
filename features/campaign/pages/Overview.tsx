@@ -19,7 +19,7 @@ const Overview = () => {
           value="12"
           suffix="campaigns currently running"
           badgeValue="2.50%"
-          badgeColor="#2CC974"
+          badgeColor="success"
           badgeLabel="vs last month"
         />
         <StatCard
@@ -29,7 +29,7 @@ const Overview = () => {
           value="$58,200"
           suffix="from all active campaigns"
           badgeValue="2.65%"
-          badgeColor="#EF4444"
+          badgeColor="fail"
           badgeLabel="vs last month"
         />
         <StatCard
@@ -39,7 +39,7 @@ const Overview = () => {
           value="300,000"
           suffix="campaigns have been displayed"
           badgeValue="10.55%"
-          badgeColor="#2CC974"
+          badgeColor="success"
           badgeLabel="vs last month"
         />
         <StatCard
@@ -49,7 +49,7 @@ const Overview = () => {
           value="$1,230"
           suffix="total impression"
           badgeValue="6.50%"
-          badgeColor="#2CC974"
+          badgeColor="success"
           badgeLabel="vs last month"
         />
       </View>
