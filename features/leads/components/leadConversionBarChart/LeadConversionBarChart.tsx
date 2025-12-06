@@ -41,7 +41,7 @@ const LeadConversionBarChart = () => {
       {/* EJE Y */}
       <VictoryAxis
         dependentAxis
-        tickFormat={(t) => `${t}%rece`}
+        tickFormat={(t) => `${t}%`}
         style={{
           axis: { stroke: "transparent" },
           grid: {
