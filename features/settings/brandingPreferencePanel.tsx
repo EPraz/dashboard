@@ -1,7 +1,7 @@
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 
-/* Reusable select pill */
+
 const SelectPill: React.FC<{ value: string }> = ({ value }) => (
   <button
     type="button"
@@ -15,9 +15,9 @@ const SelectPill: React.FC<{ value: string }> = ({ value }) => (
 const BrandingPreferencePanel: React.FC = () => {
   return (
     <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-      {/* LEFT COLUMN */}
+      
       <div className="space-y-8">
-        {/* Brand Logo */}
+    
         <div>
           <h3 className="text-base font-semibold text-[#141414]">Brand Logo</h3>
           <p className="mt-1 text-sm text-[#9a9a9a]">
@@ -43,7 +43,7 @@ const BrandingPreferencePanel: React.FC = () => {
           </div>
         </div>
 
-        {/* Company Name */}
+      
         <div>
           <label className="block text-sm font-medium text-[#2a2a2a]">
             Company Name
@@ -56,7 +56,6 @@ const BrandingPreferencePanel: React.FC = () => {
           </div>
         </div>
 
-        {/* Brand Color */}
         <div className="flex items-start justify-between gap-6">
           <div>
             <h3 className="text-base font-semibold text-[#141414]">Brand Color</h3>
@@ -72,7 +71,7 @@ const BrandingPreferencePanel: React.FC = () => {
           </button>
         </div>
 
-        {/* Custom Fonts */}
+      
         <div className="flex items-start justify-between gap-6">
           <div>
             <h3 className="text-base font-semibold text-[#141414]">Custom Fonts</h3>
@@ -84,9 +83,9 @@ const BrandingPreferencePanel: React.FC = () => {
         </div>
       </div>
 
-      {/* RIGHT COLUMN */}
+
       <div className="space-y-10">
-        {/* Default Views */}
+       
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-[0.04em] text-[#ff7b3b]">
             Default Views
@@ -120,7 +119,7 @@ const BrandingPreferencePanel: React.FC = () => {
           </div>
         </div>
 
-        {/* Data Settings */}
+     
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-[0.04em] text-[#ff7b3b]">
             Data Settings

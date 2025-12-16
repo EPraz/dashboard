@@ -39,7 +39,7 @@ const TextInput: React.FC<{
 const GeneralProfilePanel: React.FC = () => {
   return (
     <div className="grid gap-8 lg:grid-cols-2 lg:gap-14">
-      {/* LEFT */}
+   
       <div className="space-y-6">
         <div>
           <h3 className="text-base font-semibold text-[#141414]">
@@ -110,7 +110,7 @@ const GeneralProfilePanel: React.FC = () => {
         </Field>
       </div>
 
-      {/* RIGHT */}
+    
       <div className="space-y-6">
         <div className="flex items-start justify-between gap-6">
           <div>
