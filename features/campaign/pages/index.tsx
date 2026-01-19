@@ -1,8 +1,6 @@
-import { PageHeader } from "@/components";
-import { TopMenu } from "@/features/leads/components";
+import { PageHeader, TopMenu, TopMenuTab } from "@/components";
 import { View } from "react-native";
 
-import { TopMenuTab } from "@/features/leads/components/topMenu/TopMenu";
 import { useState } from "react";
 import Overview from "./Overview";
 

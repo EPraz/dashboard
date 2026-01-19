@@ -1,7 +1,6 @@
-import { PageHeader } from "@/components";
+import { PageHeader, TopMenu, TopMenuTab } from "@/components";
 import { useState } from "react";
 import { View } from "react-native";
-import TopMenu, { TopMenuTab } from "../components/topMenu/TopMenu";
 import LeadFunnel from "./LeadFunnel";
 import Overview from "./Overview";
 import SegmentedLeads from "./SegmentedLeads";

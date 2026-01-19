@@ -1,5 +1,4 @@
 import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
-import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { Keyboard, Pressable, Text, TextInput, View } from "react-native";
 const Robot = require("../../../assets/images/robot.png");
@@ -63,13 +62,13 @@ const PublicityBox = () => {
               </Pressable>
             </View>
           </View>
-          <View className="w-[55%] h-[90%] flex absolute bottom-0 -right-10 -z-10">
+          {/* <View className="w-[55%] h-[90%] flex absolute bottom-0 -right-10 -z-10">
             <Image
               source={Robot}
               style={{ width: "100%", height: "100%" }}
               contentFit="contain"
             />
-          </View>
+          </View> */}
         </View>
       </LinearGradient>
     </View>

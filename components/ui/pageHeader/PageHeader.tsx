@@ -13,7 +13,7 @@ const PageHeader = ({ title, subTitle }: Props) => {
         <Text className="leading-[120%] text-ink-bold dark:text-ink-boldDark font-semibold text-[40px]">
           {title}
         </Text>
-        <Text className="text-ink-sheen dark:text-ink-sheenDark">
+        <Text className="text-ink-sheen dark:text-ink-sheenDark text-[16px] leading-[130%]">
           {subTitle}
         </Text>
       </View>

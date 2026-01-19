@@ -5,4 +5,3 @@ export { default as LeadSourceBreakdownChart } from "./leadSourceBreakdownChart/
 export { default as LeadTable } from "./leadTable/LeadTable";
 export { default as Table } from "./table/Table";
 export { default as TestBarChar } from "./testBarChar/TestBarChar";
-export { default as TopMenu } from "./topMenu/TopMenu";
