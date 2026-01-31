@@ -1,50 +1,113 @@
-# Welcome to your Expo app 👋
+# Logistics Dashboard – Frontend
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<img src="assets/images/captura_dashboard.png" alt="Logistics Dashboard Preview" width="900"/>
 
-## Get started
+## Overview
 
-1. Install dependencies
+Frontend logistics dashboard designed to visualize operational data through tables and charts, with multi-page navigation and a dedicated settings section.  
+The project focuses on responsive design, UI consistency, and user experience, without relying on a real backend.
 
-   ```bash
-   npm install
-   ```
+This application is built using **React Native and Expo**, deployed to the web via **React Native Web**, simulating a real-world product dashboard.
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## Key Features
 
-In the output, you'll find options to open the app in a
+- Logistics-focused dashboard layout
+- Data tables with individual detail pages
+- Charts for data visualization
+- Settings page
+- Light / Dark theme support
+- Fully responsive design (mobile, tablet, desktop)
+- Clean and modern UI
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Tech Stack
 
-## Get a fresh project
+### Core
 
-When you're ready, run:
+- React 19
+- React Native
+- Expo
+- Expo Router
+
+### UI & Styling
+
+- NativeWind (Tailwind CSS for React Native)
+- @expo/vector-icons
+- Expo Linear Gradient
+- Expo Blur
+
+### Navigation
+
+- React Navigation
+- Bottom Tabs Navigation
+
+### Data Visualization
+
+- Victory Native
+
+### Platform & Deployment
+
+- React Native Web
+- Web deployment with Vercel
+
+### Tooling
+
+- TypeScript
+- ESLint
+- Prettier
+
+---
+
+## Responsive Design
+
+The dashboard is optimized for multiple screen sizes:
+
+- Mobile
+- Tablet
+- Desktop
+
+A **mobile-first approach** was used, with adaptive layouts and scalable components to ensure consistent behavior across devices.
+
+---
+
+## Theming
+
+The application supports:
+
+- Light mode
+- Dark mode
+
+Theme selection is handled globally and remains consistent across all pages and layouts, providing a cohesive user experience in both GitHub light and dark environments.
+
+---
+
+## Demo
+
+🔗 Live demo:  
+https://dashboard-one-rose-14.vercel.app/dashboard/
+
+---
+
+## Project Focus
+
+This project was developed to:
+
+- Build a real-world dashboard layout using React Native
+- Practice cross-platform frontend development (web + mobile)
+- Design reusable UI components and layouts
+- Implement navigation and theming at scale
+- Deliver a polished frontend product without backend dependencies
+
+---
+
+## Installation & Local Setup
 
 ```bash
-npm run reset-project
+git clone https://github.com/your-username/dashboard.git
+cd dashboard
+npm install
+npm run web
 ```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.

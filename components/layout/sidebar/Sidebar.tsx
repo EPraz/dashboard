@@ -28,9 +28,11 @@ export default function Sidebar({
   const isDesktop = Platform.OS === "web" && width >= 1024;
 
   const widthFitFull = collapsed ? "w-fit" : "w-full";
+
   return (
     <SidebarContainer
       collapsed={collapsed}
+      isDesktop={isDesktop}
       {...(isDesktop && {
         onMouseEnter: () => handleSetCollapse(false),
         onMouseLeave: () => handleSetCollapse(true),
@@ -65,7 +67,7 @@ export default function Sidebar({
           ))}
         </GroupSidebarMenu>
 
-        <View className="w-fuill h-[1px] bg-stroke-pale dark:bg-stroke-paleDark" />
+        <View className="w-full h-[1px] bg-stroke-pale dark:bg-stroke-paleDark" />
 
         <GroupSidebarMenu collapsed={collapsed}>
           {SECONDARY.map((it, index) => (
