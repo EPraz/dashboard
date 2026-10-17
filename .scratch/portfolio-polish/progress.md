@@ -51,3 +51,11 @@ The user authorized autonomous implementation of all tickets, including progress
 - Spec review found one P3 gap in nearby budget error feedback. Shared validation now provides field-specific messages with accessible associations. The new browser regression first failed on the prior output. The reviewer confirmed the corrected implementation resolves the gap.
 - A suspected cross-lead draft carryover was investigated with public navigation on the unmodified output. The router already clears the draft; the passing regression remains as protection.
 - Final output after corrections: 1,278,668 bytes JavaScript (17 chunks; 348,067 sum-of-gzip bytes), 23,012 bytes CSS (6 files; 6,946 gzip bytes).
+- Final full production suite: 28/28 scenarios passed, no skips or flaky results. TypeScript, lint and export pass after the corrections.
+
+## Public deployment and video checkpoint
+
+- Commits e1e338b and d1cbeb3 were pushed to master. The existing Vercel Production integration published d1cbeb3 successfully, GitHub deployment 7147325306.
+- Public alias verified: https://dashboard-one-rose-14.vercel.app/dashboard. Immutable URL: https://dashboard-2l6135o99-eprazs-projects.vercel.app/dashboard.
+- Ten hosted browser scenarios passed, including the cross-feature journey, stock/revenue/conversion reconciliation, CSV, persistence/reset, budget feedback, search, both themes, mobile navigation and accessibility. Additional direct lead/product/transaction reload, history, asset and font checks passed without browser errors.
+- Tickets 01–13 are resolved. Ticket 14 remains needs-info: the English script is prepared in docs/walkthrough.md, but recording requires the owner's explicit confirmation of the finished result. No video has been recorded.

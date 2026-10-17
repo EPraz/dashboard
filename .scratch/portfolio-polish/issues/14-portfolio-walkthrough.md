@@ -8,7 +8,7 @@
 
 **Recording prerequisite:** The user must review the finished result and explicitly confirm that recording can begin. Do not start recording before that confirmation, even if all blocking tickets are complete.
 
-- [ ] Prepare an English script and recording sequence grounded in the accepted application and the verified public deployment.
+- [x] Prepare an English script and recording sequence grounded in the accepted application and the verified public deployment.
 - [ ] Obtain the user's explicit confirmation before starting any walkthrough recording.
 - [ ] Start from a clean, recognizable demo scenario and briefly introduce Aster, its audio-store context, and the frontend/sample-data scope.
 - [ ] Show the main lead journey: create or inspect a lead, add follow-up context, record a first sale, and inspect the resulting transaction, inventory effect, revenue, and campaign contribution.
@@ -21,4 +21,4 @@
 
 ## Progress
 
-The user explicitly requires confirmation of the final result before recording. No walkthrough recording has started. Prepare the script after the public deployment is verified, then request recording confirmation.
+The public deployment is verified and the [English script and recording sequence](../../../docs/walkthrough.md) are prepared. The user explicitly requires confirmation of the final result before recording. No walkthrough recording has started; ticket remains incomplete pending that confirmation and the actual playable video.

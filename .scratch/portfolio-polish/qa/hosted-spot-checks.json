@@ -1,0 +1,94 @@
+{
+  "checkedAt": "2026-10-17T23:35:37.223Z",
+  "base": "https://dashboard-one-rose-14.vercel.app",
+  "assets": [
+    {
+      "path": "/favicon.ico",
+      "status": 200,
+      "type": "image/vnd.microsoft.icon"
+    },
+    {
+      "path": "/_expo/static/css/global-a9e1cf0f0a57f49f1563bdf8e76f2d51.css",
+      "status": 200,
+      "type": "text/css; charset=utf-8"
+    },
+    {
+      "path": "/_expo/static/css/tokens-f3875f0c6a4905455753cbd72f2135dd.css",
+      "status": 200,
+      "type": "text/css; charset=utf-8"
+    },
+    {
+      "path": "/_expo/static/css/shell-37095a570b0daf81b05ad9251fa9ba08.css",
+      "status": 200,
+      "type": "text/css; charset=utf-8"
+    },
+    {
+      "path": "/_expo/static/css/ui-d92067712130634eb0d88a1b0eff6e71.css",
+      "status": 200,
+      "type": "text/css; charset=utf-8"
+    },
+    {
+      "path": "/_expo/static/css/forms-00694a82fa090bc632dff7366506d4b7.css",
+      "status": 200,
+      "type": "text/css; charset=utf-8"
+    },
+    {
+      "path": "/_expo/static/css/insights-da9974f03be9b416998469d0053bf911.css",
+      "status": 200,
+      "type": "text/css; charset=utf-8"
+    },
+    {
+      "path": "/_expo/static/js/web/__expo-metro-runtime-8c088df87a31e4e6accd81c554ec290d.js",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "/_expo/static/js/web/__common-cf55dde598d7868ea8d6c04de243cf05.js",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "/_expo/static/js/web/entry-b22753b36dc8b9a8d0dfb215a081d3dc.js",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8"
+    },
+    {
+      "path": "/fonts/urbanist-latin.woff2",
+      "status": 200,
+      "type": "font/woff2"
+    },
+    {
+      "path": "/favicon.png",
+      "status": 200,
+      "type": "image/png"
+    }
+  ],
+  "routes": [
+    {
+      "path": "/",
+      "heading": "Your business, in harmony.",
+      "direct": "passed",
+      "reload": "passed"
+    },
+    {
+      "path": "/dashboard/leads/lead-001",
+      "heading": "Morgan Chen",
+      "direct": "passed",
+      "reload": "passed"
+    },
+    {
+      "path": "/dashboard/products/aurora",
+      "heading": "Aurora Studio Headphones",
+      "direct": "passed",
+      "reload": "passed"
+    },
+    {
+      "path": "/dashboard/transactions/AST-1001",
+      "heading": "AST-1001",
+      "direct": "passed",
+      "reload": "passed"
+    }
+  ],
+  "transactionHistory": "passed",
+  "browserErrors": []
+}

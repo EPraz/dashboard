@@ -46,7 +46,18 @@ The independent [standards and spec review](code-review.md) is complete. The bud
 
 ## Public deployment
 
-Pending the reviewed implementation commit and Vercel's existing GitHub production integration. The intended alias is `https://dashboard-one-rose-14.vercel.app/dashboard`. Publication is not considered verified until the actual hosted application and assets pass their checks.
+Published through the existing GitHub/Vercel Production integration on October 17, 2026:
+
+- [Public application](https://dashboard-one-rose-14.vercel.app/dashboard)
+- Application commit: `d1cbeb37f917ded769151047d9b01dbb89f09f92`
+- [Immutable deployment](https://dashboard-2l6135o99-eprazs-projects.vercel.app/dashboard), GitHub deployment `7147325306`, status **success**.
+- [Vercel deployment record](https://vercel.com/eprazs-projects/dashboard/919jq1bDnW3FqhfsBNLLF3ZyNHR5)
+
+**10 hosted browser scenarios passed** against the public alias: the complete cross-feature journey, first and repeat purchases, both budget scenarios, search and cross-lead navigation, remembered themes, mobile touch/history/unknown-route recovery, and nine-view accessibility checks at Light 320px and Dark 1440px. No skips or flaky results. Evidence: `.scratch/portfolio-polish/qa/hosted-browser-results.json`.
+
+Additional hosted checks verified direct entry and reload for lead, product, and transaction details; transaction browser back/forward; and HTTP 200 with correct non-HTML content types for all entry scripts/styles, font, and favicons. No console or page errors occurred in these spot checks. The prior deployment returned HTML for the font URL; the corrected routing now serves `font/woff2`. Evidence and the repeatable spot-check script are under `qa/hosted-spot-checks.json` and `qa/verify-hosted.cjs` in the feature tracker.
+
+The public version remains a browser-local sample-data frontend. Test purchases and contacts were isolated to the automated browser contexts. The [English walkthrough script](walkthrough.md) is ready; recording still awaits the owner's explicit confirmation.
 
 ## Deliberate limits
 
