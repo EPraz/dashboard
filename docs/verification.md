@@ -7,12 +7,12 @@ Application checked on October 17, 2026 using Node 24.13.0 and the exported prod
 - Clean `npm ci` succeeds from the committed dependency tree.
 - `npm run typecheck`, `npm run lint`, and `npm run build` pass.
 - `expo install --check` reports aligned dependencies; Expo Doctor passes 20/20 checks.
-- Final complete browser run: **28 passed**, no skips or flaky results, against the production export. The versioned JSON evidence is under `.scratch/portfolio-polish/qa/browser-results.json`.
+- The initial complete browser run passed 28 scenarios. The scrolling-regression follow-up below adds six checks; its full-suite evidence is under `.scratch/portfolio-polish/qa/scroll-fix-browser-results.json`.
 
 | Production output     |    Uncompressed | Sum of individually gzipped files |
 | --------------------- | --------------: | --------------------------------: |
 | JavaScript, 17 chunks | 1,278,668 bytes |                     348,067 bytes |
-| CSS, 6 files          |    23,012 bytes |                       6,946 bytes |
+| CSS, 6 files          |    23,129 bytes |                       7,006 bytes |
 
 The original build was approximately 2.56 MB of JavaScript and 27.7 kB of CSS. These are build-size observations, not load-time or runtime-performance measurements. Exact final measurements are saved in `qa/build-measurements.json` alongside the implementation evidence.
 
@@ -36,6 +36,16 @@ Additional browser spot checks passed for lead next/previous pagination, alphabe
 
 The independent [standards and spec review](code-review.md) is complete. The budget's field-level validation finding and the shared lead-classification duplication were resolved and re-reviewed. Two added browser regressions cover accessible budget errors and clean note drafts when navigating directly between leads.
 
+## Scrolling regression follow-up
+
+The owner reported that ordinary scrolling was blocked. Reproduction with real wheel input confirmed that Expo's exported `body { overflow: hidden }` reset prevented document scrolling. The earlier tests could bring controls into view programmatically and did not prove wheel behavior.
+
+The semantic web UI now explicitly enables document scrolling and lets the root grow with its content, preserving the theme background throughout long pages. The fixed sidebar scrolls independently when the window is short. An open native dialog locks background scrolling while retaining its own overflow; closing it restores page scrolling.
+
+Six public-browser regressions cover wheel scrolling to the bottom of Leads and Help and keyboard return to the top at 390px and 1440px in both themes, the sidebar's last link at 1024 × 500, and a short dialog's independent scrolling/background lock/recovery. Each previously broken behavior was reproduced before its correction. The Dark page bottom was also visually inspected.
+
+The complete production-preview suite passes **34/34 scenarios**, with no skips or flaky results. TypeScript, lint and export also pass. Run `npx playwright test tests/browser/scrolling.spec.ts` with `PLAYWRIGHT_BASE_URL` set to a preview or the public origin to repeat the six focused checks.
+
 ## Architecture review notes
 
 - Local application import graph: 56 source files, no cycles. Legacy feature barrels and their old cycle were removed.
@@ -44,7 +54,7 @@ The independent [standards and spec review](code-review.md) is complete. The bud
 - The WebAnchor adapter intentionally consumes the native `onPress` prop forwarded by Expo Router's `asChild` slot, retaining its real DOM `onClick` handler. This avoids browser warnings while keeping normal link semantics and SPA navigation.
 - See [the dependency review](dependency-review.md) for the 26 outstanding upstream audit findings; no critical findings remain.
 
-## Public deployment
+## Initial public deployment
 
 Published through the existing GitHub/Vercel Production integration on October 17, 2026:
 

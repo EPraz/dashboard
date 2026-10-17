@@ -59,3 +59,10 @@ The user authorized autonomous implementation of all tickets, including progress
 - Public alias verified: https://dashboard-one-rose-14.vercel.app/dashboard. Immutable URL: https://dashboard-2l6135o99-eprazs-projects.vercel.app/dashboard.
 - Ten hosted browser scenarios passed, including the cross-feature journey, stock/revenue/conversion reconciliation, CSV, persistence/reset, budget feedback, search, both themes, mobile navigation and accessibility. Additional direct lead/product/transaction reload, history, asset and font checks passed without browser errors.
 - Tickets 01–13 are resolved. Ticket 14 remains needs-info: the English script is prepared in docs/walkthrough.md, but recording requires the owner's explicit confirmation of the finished result. No video has been recorded.
+
+## Scrolling regression reported during owner review
+
+- Reproduced the blocked wheel scroll in the production preview. Expo's hidden body overflow had no ScrollView or alternative scrolling container in this semantic DOM interface. The original browser scenarios did not exercise actual wheel input.
+- Enabled document scrolling and natural root height so the theme covers the entire document. Short-window sidebar navigation now has its own scroll region. Open dialogs lock the background while retaining their own scrolling; closing restores document scrolling.
+- Six focused public-browser regressions pass after first reproducing the broken behavior: both themes at mobile/desktop widths, keyboard return, short sidebar, dialog isolation and recovery. Full integration verification passes 34/34 scenarios with no skips or flaky results; TypeScript, lint and export also pass. Evidence: qa/scroll-fix-browser-results.json.
+- The preview at http://localhost:4173/dashboard is rebuilt and ready for the owner to reload. Walkthrough recording remains unapproved and has not started.

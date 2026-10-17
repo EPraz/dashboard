@@ -6,6 +6,14 @@ body,
 }
 body {
   background: #f3f6f5;
+  /* This web UI uses document scrolling rather than a native ScrollView. */
+  overflow: auto;
+}
+#root {
+  height: auto;
+}
+body:has(dialog[open]) {
+  overflow: hidden;
 }
 button,
 input,
