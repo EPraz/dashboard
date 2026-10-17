@@ -13,32 +13,44 @@ export function initialBudget(): BudgetPlan {
     },
   };
 }
-export function validateBudget(plan: BudgetPlan) {
+export function budgetErrors(plan: BudgetPlan) {
+  const errors: {
+    total?: string;
+    allocations: Partial<Record<(typeof sources)[number], string>>;
+    sum?: string;
+  } = { allocations: {} };
   if (
     !Number.isSafeInteger(plan.totalCents) ||
     plan.totalCents <= 0 ||
     plan.totalCents > 10000000000
   )
-    throw new DemoError(
-      "Enter a positive budget up to USD 100,000,000, with at most two decimal places.",
-    );
-  const values = sources.map((source) => plan.allocations[source]);
-  if (
-    values.some(
-      (value) =>
-        !Number.isFinite(value) ||
-        value < 0 ||
-        value > 100 ||
-        Math.abs(value * 100 - Math.round(value * 100)) > 0.000001,
+    errors.total =
+      "Enter a positive budget up to USD 100,000,000, with at most two decimal places.";
+  for (const source of sources) {
+    const value = plan.allocations[source];
+    if (
+      !Number.isFinite(value) ||
+      value < 0 ||
+      value > 100 ||
+      Math.abs(value * 100 - Math.round(value * 100)) > 0.000001
     )
+      errors.allocations[source] =
+        "Enter an allocation between 0% and 100%, with at most two decimal places.";
+  }
+  if (
+    !Object.keys(errors.allocations).length &&
+    Math.abs(
+      sources.reduce((sum, source) => sum + plan.allocations[source], 0) - 100,
+    ) > 0.000001
   )
-    throw new DemoError(
-      "Each allocation must be between 0% and 100%, with at most two decimal places.",
-    );
-  if (Math.abs(values.reduce((sum, value) => sum + value, 0) - 100) > 0.000001)
-    throw new DemoError(
-      "Allocations must total 100% before you can save the plan.",
-    );
+    errors.sum = "Allocations must total 100% before you can save the plan.";
+  return errors;
+}
+export function validateBudget(plan: BudgetPlan) {
+  const errors = budgetErrors(plan);
+  const message =
+    errors.total ?? Object.values(errors.allocations)[0] ?? errors.sum;
+  if (message) throw new DemoError(message);
 }
 export function allocatedAmounts(plan: BudgetPlan) {
   const amounts = sources.map((source) => ({

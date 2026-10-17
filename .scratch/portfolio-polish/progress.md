@@ -44,3 +44,10 @@ The user authorized autonomous implementation of all tickets, including progress
 - Application milestone verified on the production export: 26/26 browser scenarios pass, including all eight width/theme combinations and emulated touch navigation. A final spec reconciliation added a campaign spotlight to the overview and retained current-stock attention under products. Additional pagination, clear-filter, invalid-budget and missing-record spot checks passed without console errors.
 - Clean npm ci, TypeScript, lint, export, dependency compatibility and Expo Doctor pass. Final output: 1,278,442 bytes of JS across 17 chunks; 23,012 bytes of CSS. Sum of gzip files: 347,942 bytes JS and 6,946 bytes CSS. These are artifact sizes, not runtime benchmarks.
 - Three actual production screenshots were captured and visually inspected. The recruiter README is rewritten in English with truthful scope, current commands, architecture and provenance. Public deployment and the standards/spec review are next. Recording remains gated on the user.
+
+## Final review corrections
+
+- Standards review found no hard breaches and one low-priority duplication judgment. Leads now uses the shared leadSummary for its filtered metrics; the reviewer confirmed resolution.
+- Spec review found one P3 gap in nearby budget error feedback. Shared validation now provides field-specific messages with accessible associations. The new browser regression first failed on the prior output. The reviewer confirmed the corrected implementation resolves the gap.
+- A suspected cross-lead draft carryover was investigated with public navigation on the unmodified output. The router already clears the draft; the passing regression remains as protection.
+- Final output after corrections: 1,278,668 bytes JavaScript (17 chunks; 348,067 sum-of-gzip bytes), 23,012 bytes CSS (6 files; 6,946 gzip bytes).

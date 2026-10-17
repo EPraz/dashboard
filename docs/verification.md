@@ -7,11 +7,11 @@ Application checked on October 17, 2026 using Node 24.13.0 and the exported prod
 - Clean `npm ci` succeeds from the committed dependency tree.
 - `npm run typecheck`, `npm run lint`, and `npm run build` pass.
 - `expo install --check` reports aligned dependencies; Expo Doctor passes 20/20 checks.
-- Final complete browser run: **26 passed**, no skips or flaky results, against the production export. The versioned JSON evidence is under `.scratch/portfolio-polish/qa/browser-results.json`.
+- Final complete browser run: **28 passed**, no skips or flaky results, against the production export. The versioned JSON evidence is under `.scratch/portfolio-polish/qa/browser-results.json`.
 
 | Production output     |    Uncompressed | Sum of individually gzipped files |
 | --------------------- | --------------: | --------------------------------: |
-| JavaScript, 17 chunks | 1,278,442 bytes |                     347,942 bytes |
+| JavaScript, 17 chunks | 1,278,668 bytes |                     348,067 bytes |
 | CSS, 6 files          |    23,012 bytes |                       6,946 bytes |
 
 The original build was approximately 2.56 MB of JavaScript and 27.7 kB of CSS. These are build-size observations, not load-time or runtime-performance measurements. Exact final measurements are saved in `qa/build-measurements.json` alongside the implementation evidence.
@@ -33,6 +33,8 @@ The original build was approximately 2.56 MB of JavaScript and 27.7 kB of CSS. T
 The portfolio screenshots show the actual production preview. They were visually inspected for layout, text, palette consistency, and incidental personal information. Only fictional records appear. No walkthrough recording has started.
 
 Additional browser spot checks passed for lead next/previous pagination, alphabetical ordering, clearing zero-result filters, campaign sources without results, invalid budgets (zero amount, negative allocations, 99% and 101% totals), preservation of the last saved plan, and missing-record recovery pages. No console errors were observed. Evidence: `.scratch/portfolio-polish/qa/spot-checks.json`.
+
+The independent [standards and spec review](code-review.md) is complete. The budget's field-level validation finding and the shared lead-classification duplication were resolved and re-reviewed. Two added browser regressions cover accessible budget errors and clean note drafts when navigating directly between leads.
 
 ## Architecture review notes
 

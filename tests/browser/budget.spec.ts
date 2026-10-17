@@ -1,5 +1,30 @@
 import { expect, test } from "@playwright/test";
 
+test("budget validation identifies the amount and allocation that need attention", async ({
+  page,
+}) => {
+  await page.goto("/dashboard/campaign?view=budget");
+  const total = page.getByLabel("Total budget (USD)");
+  const email = page.getByLabel("Email allocation (%)");
+  await total.fill("123.456");
+  await email.fill("-1");
+  await page.getByRole("button", { name: "Save plan", exact: true }).click();
+  await expect(total).toHaveAttribute("aria-invalid", "true");
+  await expect(total).toHaveAccessibleDescription(
+    /positive budget.*two decimal places/,
+  );
+  await expect(email).toHaveAttribute("aria-invalid", "true");
+  await expect(email).toHaveAccessibleDescription(/between 0% and 100%/);
+  await total.fill("1500");
+  await email.fill("25");
+  await page.getByRole("button", { name: "Save plan", exact: true }).click();
+  await expect(
+    page.getByRole("status").filter({ hasText: "Budget plan saved" }),
+  ).toBeVisible();
+  await expect(total).toHaveAttribute("aria-invalid", "false");
+  await expect(email).toHaveAttribute("aria-invalid", "false");
+});
+
 test("a saved budget validates allocations, survives reload and resets without changing revenue", async ({
   page,
 }) => {

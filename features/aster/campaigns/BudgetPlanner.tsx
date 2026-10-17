@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { useDemo } from "../data/DemoProvider";
-import { allocatedAmounts, initialBudget } from "../data/budget";
+import { allocatedAmounts, budgetErrors, initialBudget } from "../data/budget";
 import { money, sources, type BudgetPlan } from "../data/model";
 import { Button, Field, Panel } from "../ui/primitives";
 
@@ -16,42 +16,35 @@ export function BudgetPlanner() {
     ),
   );
   const [error, setError] = useState("");
+  const [submitted, setSubmitted] = useState(false);
   const baseline = initialBudget();
   const percentage = sources.reduce(
     (sum, source) => sum + Number(allocations[source]),
     0,
   );
+  const rawCents = Number(total) * 100;
   const proposal: BudgetPlan = {
-    totalCents: Math.round(Number(total) * 100),
+    totalCents:
+      total.trim() !== "" &&
+      Math.abs(rawCents - Math.round(rawCents)) < 0.000001
+        ? Math.round(rawCents)
+        : NaN,
     allocations: Object.fromEntries(
-      sources.map((source) => [source, Number(allocations[source])]),
+      sources.map((source) => [
+        source,
+        allocations[source].trim() === "" ? NaN : Number(allocations[source]),
+      ]),
     ) as BudgetPlan["allocations"],
   };
+  const errors = budgetErrors(proposal);
   const previewValid =
-    total.trim() !== "" &&
-    Number.isFinite(Number(total)) &&
-    Number(total) > 0 &&
-    sources.every(
-      (source) =>
-        allocations[source].trim() !== "" &&
-        Number.isFinite(Number(allocations[source])) &&
-        Number(allocations[source]) >= 0,
-    ) &&
-    Math.abs(percentage - 100) < 0.000001;
+    !errors.total && !errors.sum && !Object.keys(errors.allocations).length;
   const amounts = previewValid ? allocatedAmounts(proposal) : null;
   function submit(event: FormEvent) {
     event.preventDefault();
-    if (
-      total.trim() === "" ||
-      !Number.isFinite(Number(total)) ||
-      Math.abs(Number(total) * 100 - proposal.totalCents) > 0.000001 ||
-      sources.some((source) => allocations[source].trim() === "")
-    ) {
-      setError(
-        "Enter a valid USD amount with at most two decimal places and complete every allocation.",
-      );
-      return;
-    }
+    setSubmitted(true);
+    setError("");
+    if (!previewValid) return;
     const result = saveBudget(proposal);
     setError(result.ok ? "" : result.message);
   }
@@ -67,6 +60,7 @@ export function BudgetPlanner() {
             id="budget-total"
             label="Total budget (USD)"
             hint="Your initial plan is USD 1,000.00."
+            error={submitted ? errors.total : undefined}
           >
             <input
               id="budget-total"
@@ -75,6 +69,8 @@ export function BudgetPlanner() {
               step="0.01"
               min="0.01"
               value={total}
+              aria-invalid={submitted && !!errors.total}
+              aria-describedby={`budget-total-hint${submitted && errors.total ? " budget-total-error" : ""}`}
               onChange={(event) => setTotal(event.target.value)}
             />
           </Field>
@@ -84,6 +80,7 @@ export function BudgetPlanner() {
                 key={source}
                 id={`allocation-${index}`}
                 label={`${source} allocation (%)`}
+                error={submitted ? errors.allocations[source] : undefined}
               >
                 <input
                   id={`allocation-${index}`}
@@ -93,6 +90,12 @@ export function BudgetPlanner() {
                   max="100"
                   step="0.01"
                   value={allocations[source]}
+                  aria-invalid={submitted && !!errors.allocations[source]}
+                  aria-describedby={
+                    submitted && errors.allocations[source]
+                      ? `allocation-${index}-error`
+                      : undefined
+                  }
                   onChange={(event) =>
                     setAllocations({
                       ...allocations,
@@ -112,9 +115,9 @@ export function BudgetPlanner() {
             </strong>{" "}
             · Must equal 100%.
           </p>
-          {error && (
+          {(error || (submitted && errors.sum)) && (
             <p className="field-error" role="alert">
-              {error}
+              {error || errors.sum}
             </p>
           )}
           <div className="form-actions">

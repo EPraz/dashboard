@@ -3,6 +3,7 @@ import { Link, useLocalSearchParams, type Href } from "expo-router";
 import { useState } from "react";
 import { useDemo } from "../data/DemoProvider";
 import { dateLabel, inPeriod, leadStatuses, sources } from "../data/model";
+import { leadSummary } from "../data/lead-reports";
 import { Icon } from "../ui/Icon";
 import { PeriodControl } from "../ui/PeriodControl";
 import {
@@ -74,6 +75,7 @@ function LeadsWorkspace() {
     filtered,
     [query, stage, source, sort, period].join("|"),
   );
+  const summary = leadSummary(filtered);
   function clear() {
     setQuery("");
     setStage("all");
@@ -122,26 +124,20 @@ function LeadsWorkspace() {
           <div className="metrics-grid three">
             <Metric
               label="Leads acquired"
-              value={filtered.length}
+              value={summary.total}
               detail="Matching leads · acquired in this period"
               icon="users"
               featured
             />
             <Metric
               label="Open opportunities"
-              value={
-                filtered.filter(
-                  (item) => !["Converted", "Lost"].includes(item.status),
-                ).length
-              }
+              value={summary.open}
               detail="Matching New, Contacted, or Qualified leads"
               icon="trending-up"
             />
             <Metric
               label="Converted leads"
-              value={
-                filtered.filter((item) => item.status === "Converted").length
-              }
+              value={summary.converted}
               detail="Matching acquired leads · first paid purchase"
               icon="user-check"
             />
