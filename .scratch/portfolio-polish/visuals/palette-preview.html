@@ -1,0 +1,100 @@
+<div id="portfolio-palette-preview" aria-label="Sales dashboard color exploration">
+  <style>
+    #portfolio-palette-preview { --sales-bg: light-dark(#f3f6f5, #101a1d); --sales-panel: light-dark(#ffffff, #18262a); --sales-text: light-dark(#183339, #edf4f3); --sales-muted: light-dark(#52696d, #b0c2c5); --sales-line: light-dark(#dce6e3, #304248); --sales-accent: light-dark(#16676b, #79d5cf); --sales-on-accent: light-dark(#ffffff, #10292b); --sales-secondary: light-dark(#b85b34, #edaa86); --sales-soft: light-dark(#e3f0ed, #243e40); --sales-success: light-dark(#226b46, #97d6b2); width:100%; }
+    #portfolio-palette-preview * { box-sizing:border-box; }
+    #portfolio-palette-preview .sales-preview { background:var(--sales-bg); color:var(--sales-text); border:1px solid var(--sales-line); border-radius:20px; padding:24px; font-family:Inter,system-ui,sans-serif; }
+    #portfolio-palette-preview .sales-heading { display:flex; align-items:start; flex-wrap:wrap; justify-content:space-between; gap:12px; padding-right:80px; margin-bottom:22px; }
+    #portfolio-palette-preview h2 { font-size:24px; line-height:1.25; font-weight:500; margin:5px 0 0; color:var(--sales-text); }
+    #portfolio-palette-preview h3 { font-size:14px; font-weight:500; margin:0; color:var(--sales-text); }
+    #portfolio-palette-preview .sales-caption { font-size:12px; line-height:1.5; color:var(--sales-muted); }
+    #portfolio-palette-preview .sales-period { background:var(--sales-panel); border:1px solid var(--sales-line); border-radius:8px; padding:8px 12px; font-size:12px; }
+    #portfolio-palette-preview .sales-metrics { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-bottom:14px; }
+    #portfolio-palette-preview .sales-metric { background:var(--sales-panel); border-radius:14px; padding:18px; border:1px solid var(--sales-line); }
+    #portfolio-palette-preview .sales-metric.sales-featured { background:var(--sales-accent); color:var(--sales-on-accent); border-color:transparent; }
+    #portfolio-palette-preview .sales-featured .sales-caption { color:var(--sales-on-accent); }
+    #portfolio-palette-preview .sales-value { display:block; font-size:30px; font-weight:500; line-height:1.35; font-variant-numeric:tabular-nums; margin:6px 0; }
+    #portfolio-palette-preview .sales-note { font-size:12px; line-height:1.5; }
+    #portfolio-palette-preview .sales-positive { color:var(--sales-success); }
+    #portfolio-palette-preview .sales-content { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:14px; }
+    #portfolio-palette-preview .sales-panel { background:var(--sales-panel); border:1px solid var(--sales-line); border-radius:14px; padding:18px; min-width:0; }
+    #portfolio-palette-preview .sales-chart { height:174px; display:flex; gap:12px; align-items:end; padding-top:20px; }
+    #portfolio-palette-preview .sales-column { flex:1; min-width:0; display:flex; flex-direction:column; justify-content:end; align-items:center; height:100%; gap:7px; }
+    #portfolio-palette-preview .sales-column span { color:var(--sales-muted); font-size:11px; }
+    #portfolio-palette-preview .sales-bar { width:100%; max-width:38px; background:var(--sales-accent); border-radius:5px 5px 0 0; }
+    #portfolio-palette-preview .sales-column:last-child .sales-bar { background:var(--sales-secondary); }
+    #portfolio-palette-preview table { width:100%; border-collapse:collapse; font-size:12px; margin-top:16px; }
+    #portfolio-palette-preview th { text-align:left; color:var(--sales-muted); font-weight:400; padding-bottom:10px; }
+    #portfolio-palette-preview td { padding:13px 0; border-top:1px solid var(--sales-line); vertical-align:middle; }
+    #portfolio-palette-preview th:last-child, #portfolio-palette-preview td:last-child { text-align:right; }
+    #portfolio-palette-preview .sales-status { display:inline-block; background:var(--sales-soft); color:var(--sales-text); border-radius:20px; padding:5px 8px; white-space:nowrap; }
+    #portfolio-palette-preview .sales-key { display:flex; align-items:center; gap:7px; flex-wrap:wrap; margin-top:18px; color:var(--sales-muted); font-size:12px; }
+    #portfolio-palette-preview .sales-dot { width:14px; height:14px; border-radius:50%; background:var(--sales-accent); }
+    #portfolio-palette-preview .sales-dot.secondary { background:var(--sales-secondary); margin-left:10px; }
+    @media (max-width:560px) { #portfolio-palette-preview .sales-content { grid-template-columns:1fr; } #portfolio-palette-preview .sales-preview { padding:16px; } #portfolio-palette-preview .sales-heading { padding-right:70px; } }
+    @media (max-width:360px) { #portfolio-palette-preview .sales-metrics { grid-template-columns:1fr; } }
+  </style>
+  <section class="sales-preview" aria-label="Sales overview palette preview">
+    <header class="sales-heading">
+      <div><span class="sales-caption">SALES WORKSPACE</span><h2>Sales overview</h2></div>
+      <span class="sales-period">Jan – Jun 2026</span>
+    </header>
+    <div class="sales-metrics">
+      <div class="sales-metric sales-featured"><span class="sales-caption">Total revenue</span><strong class="sales-value">$69,000</strong><span class="sales-note">↑ 12.4% vs previous period</span></div>
+      <div class="sales-metric"><span class="sales-caption">Active leads</span><strong class="sales-value">128</strong><span class="sales-note sales-positive">↑ 18 new this month</span></div>
+    </div>
+    <div class="sales-content">
+      <section class="sales-panel">
+        <h3>Revenue by month</h3><span class="sales-caption">USD, thousands</span>
+        <div class="sales-chart" role="img" aria-label="Monthly revenue in thousands of US dollars: January 8, February 10, March 9, April 12, May 14, June 16.">
+          <div class="sales-column"><span>8</span><div class="sales-bar" style="height:40%"></div><span>Jan</span></div>
+          <div class="sales-column"><span>10</span><div class="sales-bar" style="height:50%"></div><span>Feb</span></div>
+          <div class="sales-column"><span>9</span><div class="sales-bar" style="height:45%"></div><span>Mar</span></div>
+          <div class="sales-column"><span>12</span><div class="sales-bar" style="height:60%"></div><span>Apr</span></div>
+          <div class="sales-column"><span>14</span><div class="sales-bar" style="height:70%"></div><span>May</span></div>
+          <div class="sales-column"><span>16</span><div class="sales-bar" style="height:80%"></div><span>Jun</span></div>
+        </div>
+      </section>
+      <section class="sales-panel">
+        <h3>Recent leads</h3>
+        <table aria-label="Sample lead statuses"><thead><tr><th scope="col">Name</th><th scope="col">Status</th></tr></thead><tbody><tr><td>Martin Torff</td><td><span class="sales-status">New</span></td></tr><tr><td>Cheyenne Lipshutz</td><td><span class="sales-status">In progress</span></td></tr><tr><td>Davis Baptista</td><td><span class="sales-status">Converted</span></td></tr></tbody></table>
+      </section>
+    </div>
+    <div class="sales-key" aria-live="polite"><span class="sales-dot" aria-hidden="true"></span><span class="sales-palette-name">Petrol & apricot</span><span class="sales-dot secondary" aria-hidden="true"></span><span>Secondary accent</span></div>
+  </section>
+  <script>
+    (function () {
+      const root = document.getElementById('portfolio-palette-preview');
+      const palettes = {
+        'Petrol & apricot': { bg:['#f3f6f5','#101a1d'], panel:['#ffffff','#18262a'], text:['#183339','#edf4f3'], muted:['#52696d','#b0c2c5'], line:['#dce6e3','#304248'], accent:['#16676b','#79d5cf'], 'on-accent':['#ffffff','#10292b'], secondary:['#b85b34','#edaa86'], soft:['#e3f0ed','#243e40'] },
+        'Graphite & citron': { bg:['#f6f6ef','#191b17'], panel:['#ffffff','#252820'], text:['#303329','#f1f3e8'], muted:['#666956','#bcc1ac'], line:['#e0e2d2','#424734'], accent:['#596b1f','#d0e68b'], 'on-accent':['#ffffff','#242c13'], secondary:['#95692a','#dfb87c'], soft:['#edf0dd','#39412a'] },
+        'Ink & periwinkle': { bg:['#f4f5fa','#171b28'], panel:['#ffffff','#222838'], text:['#293454','#f0f2fc'], muted:['#606c88','#b5bfd9'], line:['#dfe3ef','#3c455f'], accent:['#535bad','#a5adff'], 'on-accent':['#ffffff','#202647'], secondary:['#ae5369','#e9a5b8'], soft:['#edeefa','#363d5e'] }
+      };
+      const initial = window.openai && window.openai.widgetState;
+      const saved = initial && initial.modelContent;
+      const state = { palette: saved && palettes[saved.palette] ? saved.palette : 'Petrol & apricot', appearance: saved && ['Auto','Light','Dark'].includes(saved.appearance) ? saved.appearance : 'Auto' };
+      function render() {
+        const colors = palettes[state.palette] || palettes['Petrol & apricot'];
+        Object.entries(colors).forEach(([name, pair]) => root.style.setProperty('--sales-' + name, 'light-dark(' + pair[0] + ',' + pair[1] + ')'));
+        root.style.colorScheme = state.appearance === 'Auto' ? 'light dark' : state.appearance.toLowerCase();
+        root.querySelector('.sales-palette-name').textContent = state.palette;
+      }
+      function changed() {
+        render();
+        if (window.openai && window.openai.setWidgetState) window.openai.setWidgetState({ modelContent: {palette:state.palette,appearance:state.appearance}, privateContent:null }).catch(function () {});
+      }
+      render();
+      window.addEventListener('openai:set_globals', function (event) {
+        const next = event.detail && event.detail.globals && event.detail.globals.widgetState;
+        const model = next && next.modelContent;
+        if (model && palettes[model.palette]) state.palette = model.palette;
+        if (model && ['Auto','Light','Dark'].includes(model.appearance)) state.appearance = model.appearance;
+        render();
+      });
+      if (globalThis.Tweak) {
+        const tweak = new Tweak({ container: root, onChange: changed });
+        tweak.addSelect(state, 'palette', { label:'Palette', options:Object.keys(palettes), reference:'sales.palette' });
+        tweak.addSelect(state, 'appearance', { label:'Appearance', options:['Auto','Light','Dark'], reference:'sales.appearance' });
+      }
+    })();
+  </script>
+</div>

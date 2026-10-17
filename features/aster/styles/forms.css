@@ -1,0 +1,115 @@
+.modal-dialog {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 28px;
+  background: var(--surface);
+  color: var(--text);
+  width: 560px;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
+  margin: auto;
+  box-shadow: 0 24px 80px #050e1840;
+}
+.modal-dialog::backdrop {
+  background: #07161c80;
+  backdrop-filter: blur(4px);
+}
+.dialog-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+.dialog-description {
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 24px !important;
+}
+.form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+.field > label {
+  font-size: 12px;
+  font-weight: 650;
+}
+.field input,
+.field textarea,
+.field select {
+  background: var(--surface-raised);
+  color: var(--text);
+  padding: 11px 12px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 100%;
+  min-width: 0;
+}
+.field input {
+  min-height: 42px;
+}
+.field textarea {
+  resize: vertical;
+  min-height: 96px;
+}
+.field [aria-invalid="true"] {
+  border-color: var(--danger);
+}
+.field-hint {
+  color: var(--muted);
+  font-size: 11px;
+}
+.field-error {
+  color: var(--danger);
+  font-size: 12px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+.sale-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px;
+  background: var(--accent-soft);
+  border-radius: 10px;
+  font-size: 12px;
+}
+.sale-summary strong {
+  font-size: 24px;
+  letter-spacing: -0.5px;
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 600px) {
+  .modal-dialog {
+    padding: 22px 18px;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    font-size: 16px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,5 +1,1 @@
-import { DashboardHomeContainer } from "@/features";
-
-export default function DashboardHome() {
-  return <DashboardHomeContainer />;
-}
+export { default } from "../../features/aster/overview/OverviewScreen";

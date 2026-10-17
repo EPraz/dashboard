@@ -1,7 +1,1 @@
-import { DashboardLeadsContainer } from "@/features";
-
-const DashboardLeads = () => {
-  return <DashboardLeadsContainer />;
-};
-
-export default DashboardLeads;
+export { default } from "@/features/aster/leads/LeadsScreen";

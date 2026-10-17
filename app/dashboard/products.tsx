@@ -1,7 +1,1 @@
-import { DashboardProductsContainer } from "@/features";
-
-const DashboardProducts = () => {
-  return <DashboardProductsContainer />;
-};
-
-export default DashboardProducts;
+export { default } from "@/features/aster/products/ProductsScreen";

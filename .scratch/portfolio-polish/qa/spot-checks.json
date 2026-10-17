@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-17T23:24:41.507Z",
+  "checks": [
+    "Lead pagination and name ordering",
+    "Clear filters restores matching leads",
+    "Campaign source with no results",
+    "Invalid budget totals and negative/99%/101% allocations do not replace the saved plan",
+    "Missing local records have explicit recovery pages"
+  ],
+  "consoleErrors": []
+}

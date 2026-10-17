@@ -1,0 +1,161 @@
+@font-face {
+  font-family: "Urbanist Variable";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/urbanist-latin.woff2") format("woff2");
+}
+.aster-app {
+  --canvas: #f3f6f5;
+  --surface: #ffffff;
+  --surface-raised: #f8faf9;
+  --text: #193b3e;
+  --muted: #5d7375;
+  --border: #dce5e2;
+  --accent: #17666b;
+  --accent-hover: #11565b;
+  --on-accent: #ffffff;
+  --accent-soft: #e3f0ed;
+  --accent-secondary: #994828;
+  --secondary-soft: #f9e9df;
+  --success: #226545;
+  --success-soft: #e5f3ea;
+  --danger: #a43b49;
+  --danger-soft: #f9e9ec;
+  --warning: #835e1d;
+  --warning-soft: #f9efdb;
+  --ring: #397f85;
+  --shadow: 0 12px 36px #153c3810;
+  min-height: 100dvh;
+  color: var(--text);
+  background: var(--canvas);
+  font-family: "Urbanist Variable", "Trebuchet MS", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.aster-app[data-theme="dark"] {
+  --canvas: #151a27;
+  --surface: #1d2435;
+  --surface-raised: #252e43;
+  --text: #edf0fb;
+  --muted: #b1bdd4;
+  --border: #35405a;
+  --accent: #b3baff;
+  --accent-hover: #c7ccff;
+  --on-accent: #202747;
+  --accent-soft: #303955;
+  --accent-secondary: #e5a4b5;
+  --secondary-soft: #423144;
+  --success: #a1d5b8;
+  --success-soft: #233e37;
+  --danger: #f3acb5;
+  --danger-soft: #472e3e;
+  --warning: #e5c28c;
+  --warning-soft: #3c3540;
+  --ring: #bec6ff;
+  --shadow: 0 12px 36px #080e1825;
+}
+.aster-app *,
+.aster-app *::before,
+.aster-app *::after {
+  box-sizing: border-box;
+}
+.aster-app h1,
+.aster-app h2,
+.aster-app h3,
+.aster-app p {
+  margin: 0;
+}
+.aster-app h1 {
+  font-size: 32px;
+  line-height: 1.18;
+  font-weight: 650;
+  letter-spacing: -1px;
+}
+.aster-app h2 {
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 650;
+  letter-spacing: -0.3px;
+}
+.aster-app h3 {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 650;
+}
+.aster-app button,
+.aster-app input,
+.aster-app select,
+.aster-app textarea {
+  font: inherit;
+}
+.aster-app button {
+  cursor: pointer;
+}
+.aster-app button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+.aster-app a {
+  color: inherit;
+  text-decoration: none;
+}
+.aster-app a:hover {
+  text-decoration: none;
+}
+.aster-app :focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 4px;
+}
+.aster-app strong {
+  font-weight: 650;
+}
+.aster-app ::selection {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+.ui-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.icon-button {
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--surface);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-button:hover {
+  background: var(--accent-soft);
+}
+.storage-warning {
+  padding: 12px 24px;
+  color: var(--warning);
+  background: var(--warning-soft);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  z-index: 50;
+}
+.live-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  flex-shrink: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .aster-app * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

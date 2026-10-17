@@ -37,3 +37,11 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
+
+# Browser verification and hosting state
+test-results/
+playwright-report/
+.vercel/
+
+# Local exploratory screenshots; portfolio images live in docs/screenshots.
+.scratch/portfolio-polish/qa/*.png

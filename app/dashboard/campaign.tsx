@@ -1,7 +1,1 @@
-import { DashboardCampaignContainer } from "@/features";
-
-const DashboardCampaing = () => {
-  return <DashboardCampaignContainer />;
-};
-
-export default DashboardCampaing;
+export { default } from "../../features/aster/campaigns/CampaignsScreen";

@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-10-17T23:19:54.586Z",
+  "javascript": {
+    "files": 17,
+    "bytes": 1278442,
+    "gzipBytes": 347942
+  },
+  "css": {
+    "files": 6,
+    "bytes": 23012,
+    "gzipBytes": 6946
+  },
+  "totalFiles": 49
+}
