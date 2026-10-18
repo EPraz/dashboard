@@ -27,6 +27,8 @@ The reviewed 3:06 captioned MP4, VTT and poster are published. The public applic
 
 The owner explicitly approved the proposed video scope with “acepto” after reviewing the finished app and the planned cursor, selective highlights, English captions and complete commercial workflow. The owner then reminded us to publish the latest fix before filming; its successful Vercel status and actual public wheel scrolling were rechecked before capture began.
 
-The owner requested a final video-only correction: remove the brief white reload flash around 2:38 while retaining the rest of the video. The edited interval is 158.20 to 158.60 seconds; all other chapters match the original decoded frames exactly. Final owner approval awaits review of the corrected public artifact.
+The owner requested a final video-only correction: remove the brief white reload flash around 2:38 while retaining the rest of the video. The edited interval is 158.20 to 158.60 seconds; all other chapters match the original decoded frames exactly. Final owner approval was subsequently received as recorded below.
 
 The correction is published at be508636ec23d36599da079f2de46d3932ece0d1 (deployment 7147948569, Vercel success). The public player passes both responsive widths, corrected-interval seeks, exact MP4 hash, byte ranges, navigation and accessibility without browser errors. The owner can review the corrected video at the existing public URL.
+
+On October 17, 2026 (America/Bogota), the owner explicitly approved the corrected video, accepted the brief pause around 2:38, and authorized final deployment and closure of the current project. Ticket 14 remains resolved; all 14 tickets are complete. No further video edit is requested.

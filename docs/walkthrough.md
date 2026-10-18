@@ -1,6 +1,6 @@
 # Aster walkthrough
 
-**Status:** Recorded, reviewed, published and verified. Ticket 14 is complete.
+**Status:** Recorded, reviewed, published, verified and approved by the owner. Ticket 14 is complete.
 
 [Watch the walkthrough](https://dashboard-one-rose-14.vercel.app/walkthrough) · [Download MP4](../public/walkthrough/aster-walkthrough.mp4) · [English captions](../public/walkthrough/aster-walkthrough.vtt)
 
@@ -20,7 +20,7 @@ The same checks also pass against the [public player](https://dashboard-one-rose
 
 The owner liked the complete video, including mobile, and requested removal of the white flash around 2:38 before final approval. The recorded reload contained nine blank frames and one font-loading frame. The edit holds the preceding clean dark frame for 0.40 seconds (158.20–158.60), then resumes the actual reloaded view. Duration, format, captions and chapter timing are unchanged. Decoded frame hashes prove that every chapter outside Themes, including Mobile, is identical to the initial movie. Full-file decoding and frame-by-frame review of the corrected interval pass. Evidence: `themeReloadEdit` in `qa/walkthrough-render.json`.
 
-The original source take remains available locally. The renderer supports explicit `frameHolds` in the take manifest; `fix-walkthrough-flash.py` applies this specific correction and verifies the original source hash, unchanged chapters, and disappearance of blank frames. Final owner approval remains pending review of this correction.
+The original source take remains available locally. The renderer supports explicit `frameHolds` in the take manifest; `fix-walkthrough-flash.py` applies this specific correction and verifies the original source hash, unchanged chapters, and disappearance of blank frames. The owner approved the corrected video on October 17, 2026 (America/Bogota), accepting the brief visible pause at this edit and authorizing final deployment and project closure.
 
 Correction publication: `be508636ec23d36599da079f2de46d3932ece0d1`, GitHub deployment `7147948569`, Vercel success. [Corrected immutable player](https://dashboard-rcwi3r980-eprazs-projects.vercel.app/walkthrough). The public alias passes playback, all seven seek positions (including 158.20, 158.40 and 158.60 seconds), byte ranges, exact corrected-file SHA-256, transcript, navigation and accessibility at 390px and 1440px without browser errors. Hosted evidence has been refreshed for this revision.
 

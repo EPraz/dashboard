@@ -85,6 +85,8 @@ The correction is published at commit `be508636ec23d36599da079f2de46d3932ece0d1`
 
 ## Deliberate limits
 
+The owner approved the corrected walkthrough on October 17, 2026 (America/Bogota), accepting its brief pause around 2:38, and authorized final deployment and closure. All 14 portfolio-polish tickets are resolved. The delivered scope includes the frontend, responsive UI, both themes, recruiter README, published demo and approved walkthrough. No acceptance decision remains pending for this scope.
+
 This is a browser-local frontend demo: no backend, authentication, payment processing, cross-device sync, or native app delivery. Multi-tab concurrency and production inventory reservation are outside scope. Current-stage reports do not invent historical transitions. Budget plans are proposals, and the sample dataset is regenerated only on a fresh workspace or confirmed reset.
 
 The owner authorized autonomous implementation through the application, README and deployment milestones, waiving intermediate review pauses. The additional recording gate was satisfied by the owner's explicit approval before capture began.
