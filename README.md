@@ -2,7 +2,7 @@
 
 A responsive frontend workspace for a fictional audio store. Create a lead, record a demo sale, and follow its effect across revenue, inventory, conversions, and campaign results.
 
-[Explore the demo](https://dashboard-one-rose-14.vercel.app/dashboard) · [Engineering decisions](docs/adr/0001-local-demo-session.md) · [Verification](docs/verification.md)
+[Explore the demo](https://dashboard-one-rose-14.vercel.app/dashboard) · [Watch the 3-minute walkthrough](https://dashboard-one-rose-14.vercel.app/walkthrough) · [Engineering decisions](docs/adr/0001-local-demo-session.md) · [Verification](docs/verification.md)
 
 ![Aster desktop overview in Petrol & apricot, with shared sales metrics, a revenue chart, and campaign results](docs/screenshots/overview-light.png)
 

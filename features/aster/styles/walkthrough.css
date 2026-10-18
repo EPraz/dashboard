@@ -1,0 +1,117 @@
+.walkthrough-page {
+  min-height: 100dvh;
+  color: #edf0fb;
+  background: #151a27;
+  color-scheme: dark;
+  line-height: 1.6;
+}
+.walkthrough-inner {
+  width: min(1440px, 100%);
+  margin: 0 auto;
+  padding: 36px clamp(20px, 4vw, 60px) 64px;
+}
+.aster-app .walkthrough-page a {
+  color: #c7ccff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.aster-app .walkthrough-page a:hover {
+  color: #fff;
+}
+.walkthrough-page :focus-visible {
+  outline: 3px solid #b3baff;
+  outline-offset: 5px;
+}
+.walkthrough-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+.walkthrough-back img {
+  width: 24px;
+  height: 24px;
+}
+.walkthrough-page header {
+  margin: 32px 0 24px;
+}
+.walkthrough-eyebrow {
+  color: #b3baff;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 1.8px;
+}
+.aster-app .walkthrough-page h1 {
+  font-size: clamp(32px, 4vw, 52px);
+  letter-spacing: -1px;
+  font-weight: 650;
+  line-height: 1.15;
+  margin: 10px 0 14px;
+}
+.walkthrough-description {
+  color: #b1bdd4;
+  max-width: 760px;
+  font-size: 17px;
+}
+.walkthrough-page video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #101725;
+  border: 1px solid #35405a;
+  border-radius: 12px;
+}
+.walkthrough-meta,
+.walkthrough-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+.walkthrough-meta {
+  color: #b1bdd4;
+  font-size: 14px;
+  margin-top: 16px;
+}
+.walkthrough-links {
+  margin: 24px 0 32px;
+  font-weight: 600;
+}
+.walkthrough-page details {
+  border-top: 1px solid #35405a;
+  padding-top: 24px;
+  max-width: 940px;
+}
+.walkthrough-page summary {
+  cursor: pointer;
+  color: #c7ccff;
+  font-weight: 600;
+}
+.walkthrough-page ol {
+  display: grid;
+  gap: 18px;
+  padding-left: 24px;
+  color: #b1bdd4;
+}
+.walkthrough-page strong {
+  color: #edf0fb;
+}
+.walkthrough-scope {
+  color: #b1bdd4;
+  font-size: 14px;
+  margin-top: 28px !important;
+  max-width: 900px;
+}
+@media (max-width: 600px) {
+  .walkthrough-inner {
+    padding-top: 24px;
+  }
+  .walkthrough-page header {
+    margin-top: 24px;
+  }
+  .walkthrough-description {
+    font-size: 15px;
+  }
+  .walkthrough-page video {
+    border-radius: 6px;
+  }
+}

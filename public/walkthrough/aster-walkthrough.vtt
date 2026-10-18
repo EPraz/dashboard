@@ -1,0 +1,85 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.020
+Aster · Sales & Marketing Dashboard
+
+00:00:05.020 --> 00:00:10.040
+A fictional audio store. Browser-local sample data; no login, API or real payments.
+
+00:00:10.040 --> 00:00:21.060
+Create a lead and connect them to an acquisition source and campaign.
+
+00:00:21.060 --> 00:00:32.080
+Jamie Reed · Paid search · Studio Days
+
+00:00:32.080 --> 00:00:39.100
+Qualify the lead and add a note for the next conversation.
+
+00:00:39.100 --> 00:00:46.120
+Stage and follow-up notes persist after a reload.
+
+00:00:46.120 --> 00:00:55.140
+Two Aurora Studio Headphones · USD 358.00
+
+00:00:55.140 --> 00:01:04.160
+The first paid sample purchase converts the lead and updates inventory. No payment is taken.
+
+00:01:04.160 --> 00:01:12.180
+One more unit · USD 179.00
+
+00:01:12.180 --> 00:01:20.200
+Two purchases. USD 537.00 in revenue. The customer still counts as one conversion.
+
+00:01:20.200 --> 00:01:26.220
+Every sample purchase has a transaction, customer, product and attribution.
+
+00:01:26.220 --> 00:01:32.240
+Inspect the repeat purchase: one unit, USD 179.00, attributed to Studio Days.
+
+00:01:32.240 --> 00:01:37.260
+Available inventory: 42 → 39 units.
+
+00:01:37.260 --> 00:01:42.280
+Stock and product performance derive from the same transaction ledger.
+
+00:01:42.280 --> 00:01:47.300
+Both purchases add USD 537.00 to the overview.
+
+00:01:47.300 --> 00:01:52.320
+Reporting periods, product results and revenue use the shared local records.
+
+00:01:52.320 --> 00:01:57.340
+Studio Days receives USD 537.00 from the customer's two purchases.
+
+00:01:57.340 --> 00:02:02.360
+Repeat purchases add campaign revenue without inventing another conversion.
+
+00:02:02.360 --> 00:02:10.380
+Save a USD 1,500.00 proposal with allocations totaling 100%.
+
+00:02:10.380 --> 00:02:18.400
+Budget planning is a simulation. It does not change sales, conversions or inventory.
+
+00:02:18.400 --> 00:02:25.420
+Search Jamie's purchases: two transactions, three units, USD 537.00.
+
+00:02:25.420 --> 00:02:32.440
+Export the matching records to CSV, including results beyond the visible page.
+
+00:02:32.440 --> 00:02:37.460
+Petrol & apricot. Ink & periwinkle.
+
+00:02:37.460 --> 00:02:42.480
+The visible theme control remembers your appearance after reload.
+
+00:02:42.480 --> 00:02:49.500
+Actual mobile viewport · touch-sized navigation and responsive product views.
+
+00:02:49.500 --> 00:02:56.520
+Explore products and their details in the responsive mobile layout.
+
+00:02:56.520 --> 00:03:01.540
+Try the complete sample workflow yourself.
+
+00:03:01.540 --> 00:03:06.560
+dashboard-one-rose-14.vercel.app · github.com/EPraz/dashboard

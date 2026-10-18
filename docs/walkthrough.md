@@ -1,6 +1,34 @@
-# Aster walkthrough — recording script
+# Aster walkthrough
 
-**Status:** Script prepared; recording awaits the owner's explicit confirmation of the finished application. No recording has started.
+**Status:** Recorded and reviewed. Public player publication and hosted verification are in progress.
+
+[Watch the walkthrough](https://dashboard-one-rose-14.vercel.app/walkthrough) · [Download MP4](../public/walkthrough/aster-walkthrough.mp4) · [English captions](../public/walkthrough/aster-walkthrough.vtt)
+
+The finished video is **3:06** (186.56 seconds), **1920 × 1080**, 25 fps, H.264 MP4, **6,984,477 bytes**. It is a silent video with embedded English explanatory captions. The player includes native playback/fullscreen controls, download links, and an HTML transcript. Cursor movement, short click pulses, selective emphasis, and one gentle camera move are recording annotations; they are not shipped as application interactions.
+
+## Source and review
+
+The owner approved recording after reviewing the finished application and proposed scope. The scroll fix `945411657daf167b79420d4f55a0c4f13d9dd859` was verified as successfully published in Vercel, including a real wheel-scroll check on the public alias, before capture began. Both source clips show that public version in clean browser contexts. The mobile clip uses an actual 390 × 844 viewport and a snapshot of the same fictional recording session for continuity; this does not represent cross-device synchronization.
+
+The recorded public workflow verifies USD 537 added revenue, two purchases, three units, stock 39, one added conversion, and a two-row CSV download. No browser errors occurred. The entire MP4 decodes successfully. Chronological frames sampled every two seconds across the complete edit and full-resolution key frames were reviewed for flow, captions, numerical claims, privacy and framing. Native paused playback and the mobile player were visually checked as well. The first draft was replaced because native dialogs hid the cursor; the final take keeps annotations in the dialog's top layer and leaves room above the player's controls for captions.
+
+Local playback, four seek positions, direct entry, downloads, matching video SHA-256, HTTP byte ranges, transcript, demo return navigation and accessibility checks pass at 390px and 1440px. The automatic audio-caption heuristic is excluded because there is no audio track; explanatory text is embedded and also available in the HTML transcript. Detailed evidence is in `.scratch/portfolio-polish/qa/walkthrough-render.json` and `walkthrough-player-local.json`.
+
+## Optional reproduction
+
+The web app does not require recording tools. The capture/render scripts under `.scratch/portfolio-polish/qa/` use the existing Playwright installation plus local Python tools on Windows. Raw takes and rendering tools stay in the ignored `recording/` directory; only the reviewed MP4, VTT and poster are deployed.
+
+With Python 3.12 and the Windows Segoe UI fonts available:
+
+```powershell
+python -m pip install --target .scratch/portfolio-polish/recording/tools imageio-ffmpeg==0.6.0 Pillow==13.0.0
+node .scratch/portfolio-polish/qa/record-walkthrough.cjs --rehearsal
+node .scratch/portfolio-polish/qa/record-walkthrough.cjs
+```
+
+Before a future capture, verify the published application and update the script's declared `applicationCommit` if appropriate. Run `render-walkthrough.py` with the take directory printed by the capture. The renderer synchronizes each source using a pre-roll marker, exports the MP4 and captions, decodes the complete result and creates chronological review sheets. Repeat the visual review before publication. Use `verify-walkthrough.cjs` with `PLAYWRIGHT_BASE_URL` set to the intended preview or public origin to check playback and hosting.
+
+## Original script and recording guide
 
 **Application:** [Public Aster demo](https://dashboard-one-rose-14.vercel.app/dashboard). The script follows the deployed frontend workflow, not a mockup. Target length: approximately 3 minutes, with English narration or equivalent readable captions.
 

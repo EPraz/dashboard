@@ -45,3 +45,6 @@ playwright-report/
 
 # Local exploratory screenshots; portfolio images live in docs/screenshots.
 .scratch/portfolio-polish/qa/*.png
+
+# Original walkthrough takes and local rendering tools.
+.scratch/portfolio-polish/recording/

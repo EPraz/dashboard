@@ -1,0 +1,125 @@
+{
+  "applicationCommit": "945411657daf167b79420d4f55a0c4f13d9dd859",
+  "origin": "https://dashboard-one-rose-14.vercel.app",
+  "duration": 186.56,
+  "size": [
+    1920,
+    1080
+  ],
+  "fps": 25,
+  "bytes": 6984477,
+  "audio": "none; English captions are embedded",
+  "checks": {
+    "csv": "2 matching purchases downloaded and verified",
+    "commercial": {
+      "initialRevenue": 1922,
+      "finalRevenue": 2459,
+      "purchases": 2,
+      "units": 3,
+      "stock": 39,
+      "conversionsAdded": 1,
+      "leadURL": "/dashboard/leads/lead-e32c6234-51c1-4f65-9e9d-b8a4fb6625c5"
+    },
+    "browserErrors": []
+  },
+  "chapters": [
+    {
+      "id": "intro",
+      "title": "A connected frontend workspace",
+      "start": 0,
+      "duration": 10.04
+    },
+    {
+      "id": "lead",
+      "title": "01 / Build a customer connection",
+      "start": 10.04,
+      "duration": 22.04
+    },
+    {
+      "id": "followup",
+      "title": "02 / Keep useful follow-up context",
+      "start": 32.08,
+      "duration": 14.04
+    },
+    {
+      "id": "first-sale",
+      "title": "03 / First purchase, first conversion",
+      "start": 46.12,
+      "duration": 18.04
+    },
+    {
+      "id": "repeat-sale",
+      "title": "04 / Repeat purchases stay coherent",
+      "start": 64.16,
+      "duration": 16.04
+    },
+    {
+      "id": "transaction",
+      "title": "05 / Trace a real transaction",
+      "start": 80.2,
+      "duration": 12.04
+    },
+    {
+      "id": "inventory",
+      "title": "06 / Inventory follows the purchases",
+      "start": 92.24,
+      "duration": 10.04
+    },
+    {
+      "id": "overview",
+      "title": "07 / One shared commercial picture",
+      "start": 102.28,
+      "duration": 10.04
+    },
+    {
+      "id": "campaign",
+      "title": "08 / Follow the campaign contribution",
+      "start": 112.32,
+      "duration": 10.04
+    },
+    {
+      "id": "budget",
+      "title": "09 / Plan without changing achieved results",
+      "start": 122.36,
+      "duration": 16.04
+    },
+    {
+      "id": "export",
+      "title": "10 / Filter, reconcile and export",
+      "start": 138.4,
+      "duration": 14.04
+    },
+    {
+      "id": "themes",
+      "title": "11 / Two complete palettes",
+      "start": 152.44,
+      "duration": 10.04
+    },
+    {
+      "id": "mobile",
+      "title": "12 / A workspace that moves with you",
+      "start": 162.48,
+      "duration": 14.04
+    },
+    {
+      "id": "outro",
+      "title": "Explore Aster",
+      "start": 176.52,
+      "duration": 10.04
+    }
+  ],
+  "fullDecode": "passed",
+  "files": [
+    "public/walkthrough/aster-walkthrough.mp4",
+    "public/walkthrough/aster-walkthrough.vtt",
+    "public/walkthrough/poster.jpg"
+  ],
+  "sha256": "866e58834e2ded0fa27bfb6588e6aede9e2157b0fc7b11622d0738485fc9ffe4",
+  "visualReview": {
+    "completed": true,
+    "method": "Full-file decode, chronological 2-second frames across the entire edit, full-resolution key frames, and paused native-player/mobile screenshots",
+    "cursorInDialogs": "verified",
+    "captionsAboveControls": "verified",
+    "fictionalRecordsOnly": true
+  }
+}

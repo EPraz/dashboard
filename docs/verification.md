@@ -11,8 +11,8 @@ Application checked on October 17, 2026 using Node 24.13.0 and the exported prod
 
 | Production output     |    Uncompressed | Sum of individually gzipped files |
 | --------------------- | --------------: | --------------------------------: |
-| JavaScript, 17 chunks | 1,278,668 bytes |                     348,067 bytes |
-| CSS, 6 files          |    23,129 bytes |                       7,006 bytes |
+| JavaScript, 18 chunks | 1,283,409 bytes |                     350,023 bytes |
+| CSS, 7 files          |    24,934 bytes |                       7,713 bytes |
 
 The original build was approximately 2.56 MB of JavaScript and 27.7 kB of CSS. These are build-size observations, not load-time or runtime-performance measurements. Exact final measurements are saved in `qa/build-measurements.json` alongside the implementation evidence.
 
@@ -30,7 +30,7 @@ The original build was approximately 2.56 MB of JavaScript and 27.7 kB of CSS. T
 | Responsive and accessible UI | Both themes at 320, 768, 1024, and 1440 px; WCAG A/AA axe scans at 320 and 1440 across nine views; visible focus, skip link, keyboard, emulated touch, reduced motion, long valid names |
 | Routing                      | Direct detail URLs, reload, browser back/forward, and unknown-route recovery                                                                                                            |
 
-The portfolio screenshots show the actual production preview. They were visually inspected for layout, text, palette consistency, and incidental personal information. Only fictional records appear. No walkthrough recording has started.
+The portfolio screenshots show the actual production preview. They were visually inspected for layout, text, palette consistency, and incidental personal information. Only fictional records appear. The finished captioned walkthrough is documented separately below.
 
 Additional browser spot checks passed for lead next/previous pagination, alphabetical ordering, clearing zero-result filters, campaign sources without results, invalid budgets (zero amount, negative allocations, 99% and 101% totals), preservation of the last saved plan, and missing-record recovery pages. No console errors were observed. Evidence: `.scratch/portfolio-polish/qa/spot-checks.json`.
 
@@ -48,7 +48,7 @@ The complete production-preview suite passes **34/34 scenarios**, with no skips 
 
 ## Architecture review notes
 
-- Local application import graph: 56 source files, no cycles. Legacy feature barrels and their old cycle were removed.
+- Local application source: 58 files after the walkthrough route and screen were added. The original 56-file import graph had no cycles; the new thin route delegates to a screen that depends only on Router, shared WebAnchor and scoped CSS. Legacy feature barrels and their old cycle were removed.
 - Route files delegate to feature screens; commands and report calculations remain in the shared data module.
 - Reviewed files above 200 lines: Products, Leads, Transactions, Overview, Lead detail, and the explicit catalog seed. They remain cohesive local surfaces: list screens deliberately share one filtered result between metrics, pagination, and export. Most lines are accessible markup and table columns. Splitting them only to reduce line counts would obscure that shared context; domain rules are already separate.
 - The WebAnchor adapter intentionally consumes the native `onPress` prop forwarded by Expo Router's `asChild` slot, retaining its real DOM `onClick` handler. This avoids browser warnings while keeping normal link semantics and SPA navigation.
@@ -67,10 +67,18 @@ Published through the existing GitHub/Vercel Production integration on October 1
 
 Additional hosted checks verified direct entry and reload for lead, product, and transaction details; transaction browser back/forward; and HTTP 200 with correct non-HTML content types for all entry scripts/styles, font, and favicons. No console or page errors occurred in these spot checks. The prior deployment returned HTML for the font URL; the corrected routing now serves `font/woff2`. Evidence and the repeatable spot-check script are under `qa/hosted-spot-checks.json` and `qa/verify-hosted.cjs` in the feature tracker.
 
-The public version remains a browser-local sample-data frontend. Test purchases and contacts were isolated to the automated browser contexts. The [English walkthrough script](walkthrough.md) is ready; recording still awaits the owner's explicit confirmation.
+The public version remains a browser-local sample-data frontend. Test purchases and contacts were isolated to the automated browser contexts. Walkthrough recording subsequently proceeded after the owner's explicit approval and verification that the scroll fix was already public.
+
+## Finished walkthrough
+
+The [walkthrough](walkthrough.md) is a real 3:06 capture of the public app at commit `9454116`, encoded as a 1920 × 1080 H.264 MP4 with embedded English captions and no audio track. Video: 6,984,477 bytes. It is loaded only on the dedicated player route; the movie is separate from the JavaScript/CSS measurements above.
+
+The entire movie decodes without errors. A chronological review across the complete edit, key-frame inspection and paused native-player checks confirmed readable framing/captions, visible cursor in dialogs, selective highlights, both themes, a real mobile viewport and fictional records only. Recording assertions reconcile USD 537, two purchases, three units, stock 39, one conversion, and the CSV download. Evidence: `qa/walkthrough-render.json` in the feature tracker.
+
+The local player passes direct entry, playback, four seek positions, HTTP 206 byte ranges, downloaded-file SHA-256 matching, captions, transcript, demo-return navigation, overflow and WCAG A/AA axe checks at 390px and 1440px. The audio-caption heuristic is inapplicable to the silent movie; the embedded explanations also have an HTML transcript. Evidence: `qa/walkthrough-player-local.json`. TypeScript, lint and export pass; the existing shell and scrolling scenarios were rechecked. Hosted player verification follows publication.
 
 ## Deliberate limits
 
 This is a browser-local frontend demo: no backend, authentication, payment processing, cross-device sync, or native app delivery. Multi-tab concurrency and production inventory reservation are outside scope. Current-stage reports do not invent historical transitions. Budget plans are proposals, and the sample dataset is regenerated only on a fresh workspace or confirmed reset.
 
-The owner authorized autonomous implementation through the application, README and deployment milestones, waiving intermediate review pauses. Walkthrough recording remains explicitly gated on the owner's confirmation of the final result.
+The owner authorized autonomous implementation through the application, README and deployment milestones, waiving intermediate review pauses. The additional recording gate was satisfied by the owner's explicit approval before capture began.

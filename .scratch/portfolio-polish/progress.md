@@ -66,3 +66,11 @@ The user authorized autonomous implementation of all tickets, including progress
 - Enabled document scrolling and natural root height so the theme covers the entire document. Short-window sidebar navigation now has its own scroll region. Open dialogs lock the background while retaining their own scrolling; closing restores document scrolling.
 - Six focused public-browser regressions pass after first reproducing the broken behavior: both themes at mobile/desktop widths, keyboard return, short sidebar, dialog isolation and recovery. Full integration verification passes 34/34 scenarios with no skips or flaky results; TypeScript, lint and export also pass. Evidence: qa/scroll-fix-browser-results.json.
 - The preview at http://localhost:4173/dashboard is rebuilt and ready for the owner to reload. Walkthrough recording remains unapproved and has not started.
+
+## Authorized walkthrough production
+
+- The owner accepted the video scope and explicitly approved recording, then requested a final check that the scroll fix was already published. Vercel success and actual public wheel scrolling at commit 9454116 were verified before capture began.
+- Captured the real public workflow in clean browser contexts. The recording verifies USD 537, two purchases, three units, stock 39, one added conversion, and the actual CSV download, with no browser errors.
+- Final movie: 3:06 (186.56 seconds), 1920 × 1080, 25 fps, H.264, 6,984,477 bytes, embedded English captions, no audio. Cursor annotations stay above native dialogs; highlights are brief. The mobile segment uses a real 390 × 844 viewport.
+- Decoded the complete movie and reviewed chronological frames throughout the edit, key frames, native paused playback and the mobile player. The dedicated Router player includes native controls, downloads and an HTML transcript. Local playback, seeking, byte ranges, SHA-256, navigation and accessibility checks pass at 390px and 1440px.
+- The README now links to the reviewed video. Public player publication and final hosted checks follow; ticket 14 remains claimed until those checks finish.
