@@ -4,7 +4,7 @@
 
 **Blocked by:** 12 — Present Aster clearly to recruiters; 13 — Verify and publish the completed Vercel demo.
 
-**Status:** claimed
+**Status:** resolved
 
 **Recording prerequisite:** The user must review the finished result and explicitly confirm that recording can begin. Do not start recording before that confirmation, even if all blocking tickets are complete.
 
@@ -16,12 +16,12 @@
 - [x] Include concise views of budget planning, useful reporting or CSV, mobile responsiveness, and the visible switch between both palettes.
 - [x] Produce an actual playable recording with readable framing, deliberate pacing, and English narration or explanatory captions; a script alone does not complete the ticket.
 - [x] Review the full recording for broken interactions, unreadable content, incidental personal information, stale branding, inaccurate claims, and divergence from the public version.
-- [ ] Add the final walkthrough reference to the portfolio presentation and confirm the recording is accessible from its intended destination.
-- [ ] Record any external recording/publishing prerequisite that prevents delivery and leave the ticket incomplete until the playable result and its reference have been verified.
+- [x] Add the final walkthrough reference to the portfolio presentation and confirm the recording is accessible from its intended destination.
+- [x] Record any external recording/publishing prerequisite that prevents delivery and leave the ticket incomplete until the playable result and its reference have been verified.
 
 ## Progress
 
-The reviewed 3:06 captioned MP4, VTT and poster are ready. The public application at scroll-fix commit 9454116 was verified before recording. The complete public recording workflow and local player checks pass, including stock/revenue/conversion reconciliation, downloads, playback/seeking and responsive/accessibility checks. Publication and verification of the final public player remain in progress. Details: [walkthrough](../../../docs/walkthrough.md).
+The reviewed 3:06 captioned MP4, VTT and poster are published. The public application at scroll-fix commit 9454116 was verified before recording. The complete public recording workflow and local/hosted player checks pass, including stock/revenue/conversion reconciliation, downloads, playback/seeking, byte ranges, SHA-256 and responsive/accessibility checks. The [public player](https://dashboard-one-rose-14.vercel.app/walkthrough) is linked from README. Publication commit 72fa230, deployment 7147825131, Vercel success. No recording or publishing prerequisite remains. Details: [walkthrough](../../../docs/walkthrough.md).
 
 ## Comments
 

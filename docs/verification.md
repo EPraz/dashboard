@@ -75,7 +75,9 @@ The [walkthrough](walkthrough.md) is a real 3:06 capture of the public app at co
 
 The entire movie decodes without errors. A chronological review across the complete edit, key-frame inspection and paused native-player checks confirmed readable framing/captions, visible cursor in dialogs, selective highlights, both themes, a real mobile viewport and fictional records only. Recording assertions reconcile USD 537, two purchases, three units, stock 39, one conversion, and the CSV download. Evidence: `qa/walkthrough-render.json` in the feature tracker.
 
-The local player passes direct entry, playback, four seek positions, HTTP 206 byte ranges, downloaded-file SHA-256 matching, captions, transcript, demo-return navigation, overflow and WCAG A/AA axe checks at 390px and 1440px. The audio-caption heuristic is inapplicable to the silent movie; the embedded explanations also have an HTML transcript. Evidence: `qa/walkthrough-player-local.json`. TypeScript, lint and export pass; the existing shell and scrolling scenarios were rechecked. Hosted player verification follows publication.
+The local player passes direct entry, playback, four seek positions, HTTP 206 byte ranges, downloaded-file SHA-256 matching, captions, transcript, demo-return navigation, overflow and WCAG A/AA axe checks at 390px and 1440px. The audio-caption heuristic is inapplicable to the silent movie; the embedded explanations also have an HTML transcript. Evidence: `qa/walkthrough-player-local.json`. TypeScript, lint and export pass; all seven selected shell and scrolling scenarios pass.
+
+The same player checks pass against [the public URL](https://dashboard-one-rose-14.vercel.app/walkthrough), with no browser errors and an exact SHA-256 match to the reviewed MP4. Publication commit `72fa2307fa08195be0ce59b390022ac3fa2ac401`, deployment `7147825131`, Vercel success. [Immutable player](https://dashboard-5ec3uxrd6-eprazs-projects.vercel.app/walkthrough). Hosted evidence: `qa/walkthrough-player-hosted.json`. README now links to the working player.
 
 ## Deliberate limits
 

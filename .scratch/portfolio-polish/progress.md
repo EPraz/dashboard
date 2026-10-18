@@ -74,3 +74,10 @@ The user authorized autonomous implementation of all tickets, including progress
 - Final movie: 3:06 (186.56 seconds), 1920 × 1080, 25 fps, H.264, 6,984,477 bytes, embedded English captions, no audio. Cursor annotations stay above native dialogs; highlights are brief. The mobile segment uses a real 390 × 844 viewport.
 - Decoded the complete movie and reviewed chronological frames throughout the edit, key frames, native paused playback and the mobile player. The dedicated Router player includes native controls, downloads and an HTML transcript. Local playback, seeking, byte ranges, SHA-256, navigation and accessibility checks pass at 390px and 1440px.
 - The README now links to the reviewed video. Public player publication and final hosted checks follow; ticket 14 remains claimed until those checks finish.
+
+## Walkthrough delivered
+
+- Commit 72fa230 published the video and player successfully through the existing Vercel integration, deployment 7147825131. Public URL: https://dashboard-one-rose-14.vercel.app/walkthrough.
+- Hosted playback, four seek positions, HTTP 206 byte ranges, exact MP4 hash, captions, transcript, return to demo and accessibility checks pass at 390px and 1440px, without browser errors. Evidence: qa/walkthrough-player-hosted.json.
+- The reviewed MP4 is 6,984,477 bytes, SHA-256 866e58834e2ded0fa27bfb6588e6aede9e2157b0fc7b11622d0738485fc9ffe4. README links to the working public player; downloads and original local takes are available.
+- Ticket 14 is resolved. All 14 portfolio-polish tickets are complete; the recording approval gate was respected.
