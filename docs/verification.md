@@ -81,6 +81,8 @@ The same player checks pass against [the public URL](https://dashboard-one-rose-
 
 The owner subsequently requested removal of a brief recorded reload flash around 2:38. A 0.40-second hold of the preceding clean dark frame covers nine blank frames and one font-loading frame; all other chapters match the original decoded frames exactly. Duration remains 186.56 seconds. Full-file decoding and frame-by-frame review pass; the corrected interval is included in the player seek checks. See the [review correction](walkthrough.md#owner-review-theme-reload-flash).
 
+The correction is published at commit `be508636ec23d36599da079f2de46d3932ece0d1`, deployment `7147948569`, Vercel success. Hosted player checks pass at both widths, including seeks at 158.20, 158.40 and 158.60 seconds. The public file matches SHA-256 `413e6cfceec414be15b559ce91e0e6779b3ac9da8af1df3cd67cfa801159e576`. [Corrected immutable player](https://dashboard-rcwi3r980-eprazs-projects.vercel.app/walkthrough).
+
 ## Deliberate limits
 
 This is a browser-local frontend demo: no backend, authentication, payment processing, cross-device sync, or native app delivery. Multi-tab concurrency and production inventory reservation are outside scope. Current-stage reports do not invent historical transitions. Budget plans are proposals, and the sample dataset is regenerated only on a fresh workspace or confirmed reset.

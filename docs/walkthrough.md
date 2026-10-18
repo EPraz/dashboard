@@ -22,6 +22,8 @@ The owner liked the complete video, including mobile, and requested removal of t
 
 The original source take remains available locally. The renderer supports explicit `frameHolds` in the take manifest; `fix-walkthrough-flash.py` applies this specific correction and verifies the original source hash, unchanged chapters, and disappearance of blank frames. Final owner approval remains pending review of this correction.
 
+Correction publication: `be508636ec23d36599da079f2de46d3932ece0d1`, GitHub deployment `7147948569`, Vercel success. [Corrected immutable player](https://dashboard-rcwi3r980-eprazs-projects.vercel.app/walkthrough). The public alias passes playback, all seven seek positions (including 158.20, 158.40 and 158.60 seconds), byte ranges, exact corrected-file SHA-256, transcript, navigation and accessibility at 390px and 1440px without browser errors. Hosted evidence has been refreshed for this revision.
+
 ## Optional reproduction
 
 The web app does not require recording tools. The capture/render scripts under `.scratch/portfolio-polish/qa/` use the existing Playwright installation plus local Python tools on Windows. Raw takes and rendering tools stay in the ignored `recording/` directory; only the reviewed MP4, VTT and poster are deployed.
