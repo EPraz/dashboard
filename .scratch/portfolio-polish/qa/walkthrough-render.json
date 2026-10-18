@@ -7,7 +7,7 @@
     1080
   ],
   "fps": 25,
-  "bytes": 6984477,
+  "bytes": 6853357,
   "audio": "none; English captions are embedded",
   "checks": {
     "csv": "2 matching purchases downloaded and verified",
@@ -114,12 +114,26 @@
     "public/walkthrough/aster-walkthrough.vtt",
     "public/walkthrough/poster.jpg"
   ],
-  "sha256": "866e58834e2ded0fa27bfb6588e6aede9e2157b0fc7b11622d0738485fc9ffe4",
+  "sha256": "413e6cfceec414be15b559ce91e0e6779b3ac9da8af1df3cd67cfa801159e576",
   "visualReview": {
     "completed": true,
     "method": "Full-file decode, chronological 2-second frames across the entire edit, full-resolution key frames, and paused native-player/mobile screenshots",
     "cursorInDialogs": "verified",
     "captionsAboveControls": "verified",
     "fictionalRecordsOnly": true
+  },
+  "themeReloadEdit": {
+    "first": 144,
+    "last": 153,
+    "replace": 143,
+    "reason": "Hold the last clean dark frame over the reload blank and first font-loading frame (158.20\u2013158.60s).",
+    "secondsCovered": 0.4,
+    "durationAndFormatUnchanged": true,
+    "otherChaptersDecodedFrameHash": "f98dc0be668fa7f159719ea01160febdc912eabb7b0dffb286beb788b6e3465d",
+    "otherChaptersIdentical": true,
+    "fullDecode": "passed",
+    "blankFramesBefore": 9,
+    "blankFramesAfter": 0,
+    "visualReview": "All 30 frames from 157.9\u2013159.1s reviewed at 25 fps; no white flash or font-loading frame remains."
   }
 }

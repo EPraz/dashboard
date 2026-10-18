@@ -81,3 +81,9 @@ The user authorized autonomous implementation of all tickets, including progress
 - Hosted playback, four seek positions, HTTP 206 byte ranges, exact MP4 hash, captions, transcript, return to demo and accessibility checks pass at 390px and 1440px, without browser errors. Evidence: qa/walkthrough-player-hosted.json.
 - The reviewed MP4 is 6,984,477 bytes, SHA-256 866e58834e2ded0fa27bfb6588e6aede9e2157b0fc7b11622d0738485fc9ffe4. README links to the working public player; downloads and original local takes are available.
 - Ticket 14 is resolved. All 14 portfolio-polish tickets are complete; the recording approval gate was respected.
+
+## Owner video review: reload flash
+
+- The owner liked the complete video and mobile segment, requesting only the white flash around 2:38 be corrected before final approval.
+- Held the last clean dark frame from 158.20 to 158.60 seconds over nine blank reload frames and one font-loading frame. Duration and format are unchanged. All other chapters have identical decoded-frame hashes, including Mobile. Full-file decode and review of every frame around the correction pass.
+- Corrected MP4: 6,853,357 bytes, SHA-256 413e6cfceec414be15b559ce91e0e6779b3ac9da8af1df3cd67cfa801159e576. Local player checks pass at 390px and 1440px, including seven seek points. Publication and hosted verification follow.

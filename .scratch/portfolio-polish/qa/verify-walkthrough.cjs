@@ -68,7 +68,7 @@ async function verify() {
         .poll(() => video.evaluate((element) => element.currentTime))
         .toBeGreaterThan(1);
       await video.evaluate((element) => element.pause());
-      for (const time of [60, 120, 170, info.duration - 2]) {
+      for (const time of [60, 120, 158.2, 158.4, 158.6, 170, info.duration - 2]) {
         await video.evaluate(
           (element, time) =>
             new Promise((resolve, reject) => {

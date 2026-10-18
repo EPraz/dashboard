@@ -26,3 +26,5 @@ The reviewed 3:06 captioned MP4, VTT and poster are published. The public applic
 ## Comments
 
 The owner explicitly approved the proposed video scope with “acepto” after reviewing the finished app and the planned cursor, selective highlights, English captions and complete commercial workflow. The owner then reminded us to publish the latest fix before filming; its successful Vercel status and actual public wheel scrolling were rechecked before capture began.
+
+The owner requested a final video-only correction: remove the brief white reload flash around 2:38 while retaining the rest of the video. The edited interval is 158.20 to 158.60 seconds; all other chapters match the original decoded frames exactly. Final owner approval awaits review of the corrected public artifact.

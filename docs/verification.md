@@ -71,13 +71,15 @@ The public version remains a browser-local sample-data frontend. Test purchases 
 
 ## Finished walkthrough
 
-The [walkthrough](walkthrough.md) is a real 3:06 capture of the public app at commit `9454116`, encoded as a 1920 × 1080 H.264 MP4 with embedded English captions and no audio track. Video: 6,984,477 bytes. It is loaded only on the dedicated player route; the movie is separate from the JavaScript/CSS measurements above.
+The [walkthrough](walkthrough.md) is a real 3:06 capture of the public app at commit `9454116`, encoded as a 1920 × 1080 H.264 MP4 with embedded English captions and no audio track. Video: 6,853,357 bytes. It is loaded only on the dedicated player route; the movie is separate from the JavaScript/CSS measurements above.
 
 The entire movie decodes without errors. A chronological review across the complete edit, key-frame inspection and paused native-player checks confirmed readable framing/captions, visible cursor in dialogs, selective highlights, both themes, a real mobile viewport and fictional records only. Recording assertions reconcile USD 537, two purchases, three units, stock 39, one conversion, and the CSV download. Evidence: `qa/walkthrough-render.json` in the feature tracker.
 
-The local player passes direct entry, playback, four seek positions, HTTP 206 byte ranges, downloaded-file SHA-256 matching, captions, transcript, demo-return navigation, overflow and WCAG A/AA axe checks at 390px and 1440px. The audio-caption heuristic is inapplicable to the silent movie; the embedded explanations also have an HTML transcript. Evidence: `qa/walkthrough-player-local.json`. TypeScript, lint and export pass; all seven selected shell and scrolling scenarios pass.
+The local player passes direct entry, playback, seven seek positions, including the corrected interval, HTTP 206 byte ranges, downloaded-file SHA-256 matching, captions, transcript, demo-return navigation, overflow and WCAG A/AA axe checks at 390px and 1440px. The audio-caption heuristic is inapplicable to the silent movie; the embedded explanations also have an HTML transcript. Evidence: `qa/walkthrough-player-local.json`. TypeScript, lint and export pass; all seven selected shell and scrolling scenarios pass.
 
-The same player checks pass against [the public URL](https://dashboard-one-rose-14.vercel.app/walkthrough), with no browser errors and an exact SHA-256 match to the reviewed MP4. Publication commit `72fa2307fa08195be0ce59b390022ac3fa2ac401`, deployment `7147825131`, Vercel success. [Immutable player](https://dashboard-5ec3uxrd6-eprazs-projects.vercel.app/walkthrough). Hosted evidence: `qa/walkthrough-player-hosted.json`. README now links to the working player.
+The same player checks pass against [the public URL](https://dashboard-one-rose-14.vercel.app/walkthrough), with no browser errors and an exact SHA-256 match to the reviewed MP4. Initial publication commit `72fa2307fa08195be0ce59b390022ac3fa2ac401`, deployment `7147825131`, Vercel success. [Immutable player](https://dashboard-5ec3uxrd6-eprazs-projects.vercel.app/walkthrough). Hosted evidence: `qa/walkthrough-player-hosted.json`. README now links to the working player.
+
+The owner subsequently requested removal of a brief recorded reload flash around 2:38. A 0.40-second hold of the preceding clean dark frame covers nine blank frames and one font-loading frame; all other chapters match the original decoded frames exactly. Duration remains 186.56 seconds. Full-file decoding and frame-by-frame review pass; the corrected interval is included in the player seek checks. See the [review correction](walkthrough.md#owner-review-theme-reload-flash).
 
 ## Deliberate limits
 

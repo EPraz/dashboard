@@ -1,7 +1,7 @@
 {
   "origin": "http://localhost:4173",
-  "videoBytes": 6984477,
-  "sha256": "866e58834e2ded0fa27bfb6588e6aede9e2157b0fc7b11622d0738485fc9ffe4",
+  "videoBytes": 6853357,
+  "sha256": "413e6cfceec414be15b559ce91e0e6779b3ac9da8af1df3cd67cfa801159e576",
   "byteRange": "passed",
   "widths": [
     {

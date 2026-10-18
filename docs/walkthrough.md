@@ -4,7 +4,7 @@
 
 [Watch the walkthrough](https://dashboard-one-rose-14.vercel.app/walkthrough) · [Download MP4](../public/walkthrough/aster-walkthrough.mp4) · [English captions](../public/walkthrough/aster-walkthrough.vtt)
 
-The finished video is **3:06** (186.56 seconds), **1920 × 1080**, 25 fps, H.264 MP4, **6,984,477 bytes**. It is a silent video with embedded English explanatory captions. The player includes native playback/fullscreen controls, download links, and an HTML transcript. Cursor movement, short click pulses, selective emphasis, and one gentle camera move are recording annotations; they are not shipped as application interactions.
+The finished video is **3:06** (186.56 seconds), **1920 × 1080**, 25 fps, H.264 MP4, **6,853,357 bytes**. It is a silent video with embedded English explanatory captions. The player includes native playback/fullscreen controls, download links, and an HTML transcript. Cursor movement, short click pulses, selective emphasis, and one gentle camera move are recording annotations; they are not shipped as application interactions.
 
 ## Source and review
 
@@ -12,9 +12,15 @@ The owner approved recording after reviewing the finished application and propos
 
 The recorded public workflow verifies USD 537 added revenue, two purchases, three units, stock 39, one added conversion, and a two-row CSV download. No browser errors occurred. The entire MP4 decodes successfully. Chronological frames sampled every two seconds across the complete edit and full-resolution key frames were reviewed for flow, captions, numerical claims, privacy and framing. Native paused playback and the mobile player were visually checked as well. The first draft was replaced because native dialogs hid the cursor; the final take keeps annotations in the dialog's top layer and leaves room above the player's controls for captions.
 
-Local playback, four seek positions, direct entry, downloads, matching video SHA-256, HTTP byte ranges, transcript, demo return navigation and accessibility checks pass at 390px and 1440px. The automatic audio-caption heuristic is excluded because there is no audio track; explanatory text is embedded and also available in the HTML transcript. Detailed evidence is in `.scratch/portfolio-polish/qa/walkthrough-render.json` and `walkthrough-player-local.json`.
+Local playback, seven seek positions, including the corrected interval, direct entry, downloads, matching video SHA-256, HTTP byte ranges, transcript, demo return navigation and accessibility checks pass at 390px and 1440px. The automatic audio-caption heuristic is excluded because there is no audio track; explanatory text is embedded and also available in the HTML transcript. Detailed evidence is in `.scratch/portfolio-polish/qa/walkthrough-render.json` and `walkthrough-player-local.json`.
 
-The same checks also pass against the [public player](https://dashboard-one-rose-14.vercel.app/walkthrough), with no browser errors. The hosted MP4 matches SHA-256 `866e58834e2ded0fa27bfb6588e6aede9e2157b0fc7b11622d0738485fc9ffe4` and supports HTTP 206 range requests. Publication commit: `72fa2307fa08195be0ce59b390022ac3fa2ac401`; GitHub deployment `7147825131`, Vercel status success. [Immutable player deployment](https://dashboard-5ec3uxrd6-eprazs-projects.vercel.app/walkthrough). Hosted evidence: `.scratch/portfolio-polish/qa/walkthrough-player-hosted.json`.
+The same checks also pass against the [public player](https://dashboard-one-rose-14.vercel.app/walkthrough), with no browser errors. The hosted MP4 matches SHA-256 `413e6cfceec414be15b559ce91e0e6779b3ac9da8af1df3cd67cfa801159e576` and supports HTTP 206 range requests. Initial publication commit: `72fa2307fa08195be0ce59b390022ac3fa2ac401`; GitHub deployment `7147825131`, Vercel status success. [Immutable player deployment](https://dashboard-5ec3uxrd6-eprazs-projects.vercel.app/walkthrough). Hosted evidence: `.scratch/portfolio-polish/qa/walkthrough-player-hosted.json`.
+
+## Owner review: theme reload flash
+
+The owner liked the complete video, including mobile, and requested removal of the white flash around 2:38 before final approval. The recorded reload contained nine blank frames and one font-loading frame. The edit holds the preceding clean dark frame for 0.40 seconds (158.20–158.60), then resumes the actual reloaded view. Duration, format, captions and chapter timing are unchanged. Decoded frame hashes prove that every chapter outside Themes, including Mobile, is identical to the initial movie. Full-file decoding and frame-by-frame review of the corrected interval pass. Evidence: `themeReloadEdit` in `qa/walkthrough-render.json`.
+
+The original source take remains available locally. The renderer supports explicit `frameHolds` in the take manifest; `fix-walkthrough-flash.py` applies this specific correction and verifies the original source hash, unchanged chapters, and disappearance of blank frames. Final owner approval remains pending review of this correction.
 
 ## Optional reproduction
 

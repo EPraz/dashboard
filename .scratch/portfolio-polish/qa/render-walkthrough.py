@@ -104,6 +104,18 @@ def timestamp(seconds):
     return f"{hours:02}:{minutes:02}:{whole:02}.{milliseconds:03}"
 
 
+def apply_frame_holds(output, holds):
+    """Hide recorded loading frames without moving captions or later chapters."""
+    for index, hold in enumerate(holds):
+        original = output.with_suffix(f".before-hold-{index}.mp4")
+        output.replace(original)
+        run(["-i", original, "-i", original, "-filter_complex",
+             f"[0:v][1:v]freezeframes=first={hold['first']}:last={hold['last']}:replace={hold['replace']}[v]",
+             "-map", "[v]", "-an", "-r", FPS, "-c:v", "libx264",
+             "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p",
+             "-movflags", "+faststart", output])
+
+
 def render(take):
     manifest = json.loads((take / "manifest.json").read_text(encoding="utf-8"))
     if manifest["rehearsal"]:
@@ -160,6 +172,7 @@ def render(take):
         arguments += ["-filter_complex_threads", "2", "-filter_complex", ";".join(filters), "-map", f"[{previous}]", "-t", seconds, "-an", "-r", FPS, "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p", "-movflags", "+faststart", output]
         print(f"Rendering {index + 1}/{len(manifest['scenes'])}: {scene['id']} ({seconds:.2f}s)", flush=True)
         run(arguments)
+        apply_frame_holds(output, scene.get("frameHolds", []))
         elapsed += seconds
     concatenation = working / "shots.txt"
     concatenation.write_text("\n".join(f"file '{file.as_posix()}'" for file in files), encoding="utf-8")
